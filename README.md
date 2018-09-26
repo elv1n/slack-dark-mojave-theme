@@ -15,10 +15,12 @@ Project based on  [slack-black-theme](https://github.com/widget-/slack-black-the
 ### Option 1    
  Find your Slack's application directory.    
     
-* Windows: `%homepath%\AppData\Local\slack\` * Mac: `/Applications/Slack.app/Contents/` * Linux: `/usr/lib/slack/` (Debian-based)    
+* Windows: `%homepath%\AppData\Local\slack\`
+* Mac: `/Applications/Slack.app/Contents/`
+* Linux: `/usr/lib/slack/` (Debian-based)    
     
-For versions after and including `3.0.0` the same code must be added to the following file    
-`resources/app.asar.unpacked/src/static/ssb-interop.js`    
+For versions after and including `3.0.0` the same code must be added to the following file `resources/app.asar.unpacked/src/static/ssb-interop.js`
+    
  At the very bottom, add one    
     
 ```js    
@@ -62,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ### Option 2    
  For local installation clone project    
 `git clone https://github.com/elv1n/slack-dark-mojave-theme.git`    
- Change `filePath` to your folder    
+ Change `<YOUR_PATH>` to your folder    
     
 ```js    
 document.addEventListener('DOMContentLoaded',  function  ()  {    
