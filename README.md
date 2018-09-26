@@ -5,7 +5,7 @@
 A dark theme for slack inspired by Telegram desktop Dark Mojave theme.  
 Tested on 3.3.1 version  
   
-Project based on  [slack-black-theme](https://github.com/widget-/slack-black-theme). Thanks for [widget-](https://github.com/widget-) and contributors.
+Project based on  [slack-black-theme](https://github.com/widget-/slack-black-theme). Thanks to [widget-](https://github.com/widget-) and contributors.
 # Preview  
   
 Coming soon  
