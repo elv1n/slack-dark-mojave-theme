@@ -259,7 +259,7 @@ li.active[class] span,
 /*also add border to unread count for individual channels*/
 
 .p-channel_sidebar__badge {
-// border: 1 px solid;
+/ / border: 1 px solid;
 }
 
 /* new scrollbar */
@@ -1493,6 +1493,8 @@ nav {
 }
 
 .c-button--outline-primary {
+	color: var(--primary);
+	box-shadow: inset 0 0 0 1px var(--primary);
 	background: var(--background-elevated);
 }
 
@@ -1733,4 +1735,9 @@ ts-jumper .p-jumper__help {
 .c-message__reply_bar:hover .c-message__reply_bar_view_thread {
 	background: transparent;
 	color: var(--text);
+}
+
+/* sidebar jumper */
+.p-channel_sidebar__jumper {
+	background: var(--background-hover) !important;
 }
