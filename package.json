@@ -1,0 +1,8 @@
+{
+  "name": "slack-dark-mojave-theme",
+  "version": "0.0.1",
+  "description": "Telegram like Dark Mojave theme for slack",
+  "main": "index.js",
+  "author": "Elvin Dzhavadov",
+  "license": "MIT"
+}
