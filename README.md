@@ -30,16 +30,23 @@ At the very bottom, add one
 ```js  
 // First make sure the wrapper app is loaded  
 document.addEventListener("DOMContentLoaded", function() {  
+    // Then get its webviews  
+    const webviews = document.querySelectorAll(".TeamView webview");  
+    
+    // Fetch our CSS in parallel ahead of time  
+    const cssPath = 'https://cdn.rawgit.com/elv1n/slack-dark-mojave-theme/master/style.css';  
+    const cssPromise = fetch(cssPath).then(response => response.text());  
   
-   // Then get its webviews  
-   const webviews = document.querySelectorAll(".TeamView webview");  
+    // Insert a style tag into the wrapper view
+    cssPromise.then(css => {
+      let s = document.createElement('style');
+      s.type = 'text/css';
+      s.innerHTML = css;
+      document.head.appendChild(s);
+    });
   
-   // Fetch our CSS in parallel ahead of time  
-   const cssPath = 'https://cdn.rawgit.com/elv1n/slack-dark-mojave-theme/master/style.css';  
-   const cssPromise = fetch(cssPath).then(response => response.text());  
-  
-   // Wait for each webview to load  
-   webviews.forEach(webview => {  
+    // Wait for each webview to load  
+    webviews.forEach(webview => {  
       webview.addEventListener('ipc-message', message => {  
          if (message.channel == 'didFinishLoading')  
             // Finally add the CSS into the webview  
@@ -54,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
                webview.executeJavaScript(script);  
             })  
       });  
-   });  
+    });  
 });  
 ```  
   
