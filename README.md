@@ -19,7 +19,7 @@ Project based on  [slack-black-theme](https://github.com/widget-/slack-black-the
 * Mac: `/Applications/Slack.app/Contents/`
 * Linux: `/usr/lib/slack/` (Debian-based)    
     
-For versions after and including `3.0.0` the same code must be added to the following file `resources/app.asar.unpacked/src/static/ssb-interop.js`
+For versions after and including `3.0.0` code must be added to the following file `resources/app.asar.unpacked/src/static/ssb-interop.js`
     
  At the very bottom, add one    
     
