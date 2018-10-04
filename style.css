@@ -1741,3 +1741,36 @@ ts-jumper .p-jumper__help {
 .p-channel_sidebar__jumper {
 	background: var(--background-hover) !important;
 }
+
+/* direct message */
+#im_browser .im_browser_row {
+	border-top: 1px solid var(--border-bright);
+}
+
+#im_browser .im_browser_row.multiparty {
+	color: var(--text-bright);
+}
+
+#im_browser #im_list_container:not(.keyboard_active).not_scrolling .im_browser_row:not(.disabled_dm):hover, #im_browser .im_browser_row.highlighted {
+	background: var(--background-hover);
+	border-color: var(--border-bright);
+	border-radius: 0;
+}
+
+#fs_modal .fs_modal_btn:hover {
+	background: var(--border-bright);
+}
+
+/* team member */
+#team_tab #member_preview_scroller .feature_custom_status_expiry.member_details .member_name {
+	color: var(--text);
+}
+
+#member_preview_scroller a:not(.member_name):not(.current_status_preset_option):not(.member_details_manage_link):not(.current_status_presets_edit_link), .team_list_item a:not(.member_name):not(.current_status_preset_option):not(.member_details_manage_link):not(.current_status_presets_edit_link) {
+	color: var(--text);
+}
+
+/* team menu */
+#client-ui .searchable_member_list .team_list_item {
+	border-bottom-color: var(--border-dim);
+}
