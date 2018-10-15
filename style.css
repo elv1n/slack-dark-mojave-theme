@@ -280,6 +280,10 @@ li.active[class] span,
 	box-shadow: none !important;
 }
 
+#client_body:not(.onboarding):not(.feature_global_nav_layout):before {
+	height: 7px;
+}
+
 #client_body, #messages_container.has_top_messages_banner:before {
 	background: var(--background) !important;
 }
@@ -1773,4 +1777,28 @@ ts-jumper .p-jumper__help {
 /* team menu */
 #client-ui .searchable_member_list .team_list_item {
 	border-bottom-color: var(--border-dim);
+}
+
+/* sidebar file list */
+.p-file_flexpane--list {
+	background: transparent;
+}
+
+.p-file_list__file.c-pillow_file_container--full_width {
+	border-bottom-color: var(--border-dim);
+}
+
+/* calls in chat */
+.c-message__call_attachment {
+	background: var(--background-elevated);
+	color: var(--text-bright);
+	border-color: var(--primary);
+}
+
+.c-message__call--ended .c-message__call_icon {
+	color: var(--primary);
+}
+
+.c-message__call_info {
+	color: var(--text-bright);
 }
