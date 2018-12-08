@@ -353,11 +353,11 @@ textarea:focus, input[type="text"]:focus, #file_comment_textarea {
 }
 
 ts-message {
-	border-radius: 5px;
-	margin: 1px 5px !important;
+	margin: 2px 0;
 	box-shadow: none !important;
 }
 
+ts-message.highlight,
 ts-message:hover {
 	background: var(--background-hover) !important;
 }
@@ -787,7 +787,8 @@ ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-messa
 }
 
 #threads_msgs .inline_message_input_container.with_file_upload,
-#reply_container.upload_in_threads .inline_message_input_container {
+#reply_container.upload_in_threads .inline_message_input_container,
+#message_edit_container .message_input{
 	background: var(--background);
 	border-color: var(--border-dim);
 }
@@ -1808,5 +1809,13 @@ ts-jumper .p-jumper__help {
 }
 
 .c-message__call_info {
+	color: var(--text-bright);
+}
+
+#footer_archives_preview {
+	background: var(--background-hover)
+}
+
+.c-archive_footer__title {
 	color: var(--text-bright);
 }
