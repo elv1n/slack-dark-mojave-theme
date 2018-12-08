@@ -13,9 +13,9 @@ Project based on  [slack-black-theme](https://github.com/widget-/slack-black-the
 npx install install-dark-theme  
 ```  
 Arguments  
-`npx install install-dark-theme --restore` - restore original theme
+`npx install install-dark-theme --restore`  restore original theme
 
-`npx install install-dark-theme --force` - force theme installing 
+`npx install install-dark-theme --force` force theme installing 
  
   
 ### Option 2  
