@@ -1533,8 +1533,16 @@ nav {
 	background: var(--background-elevated);
 }
 
+.message__editor__save {
+	background: var(--primary);
+}
+
 .c-message--highlight, .c-message--highlight_yellow_bg {
 	background: var(--background);
+}
+/* message edit legacy */
+.c-message__editor__input--legacy {
+	background: var(--background-hover);
 }
 
 /* new filelist */
