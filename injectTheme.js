@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const os = require('os');
 const fs = require('fs-extra');
 const path = require('path');
@@ -50,7 +52,7 @@ function injectTheme() {
   fs.ensureFileSync(backupPath);
   fs.writeFileSync(backupPath, fs.readFileSync(filePath, 'utf-8'));
   console.log(`
-Backup saved and you will be able restore it with 'npx install-dark-theme --restore'
+Backup saved and you will be able restore original theme with 'npx install-dark-theme --restore'
 `);
   const applyTheme = fs.readFileSync(path.join(__dirname, 'applyTheme.txt'), 'utf-8');
   fs.appendFileSync(filePath, applyTheme);
