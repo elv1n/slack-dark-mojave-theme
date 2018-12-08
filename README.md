@@ -1,25 +1,22 @@
-
-  
-    
 # Slack Dark Mojave Theme      
- A dark theme for slack inspired by Telegram desktop Dark Mojave theme.      
-Tested on 3.3.1 version      
-      
+A dark theme inspired by Telegram desktop Dark Mojave theme for Slack      
+
 Project based on  [slack-black-theme](https://github.com/widget-/slack-black-theme). Thanks to [widget-](https://github.com/widget-) and contributors.    
 # Preview    
 ![Screenshot](https://raw.githubusercontent.com/elv1n/slack-dark-mojave-theme/master/preview.png)
     
-  # Installing into Slack      
+# Installing into Slack      
  **NB:** You'll have to do this every time Slack updates.      
   
 ### Option 1  
-Using cli  
 ```shell  
 npx install install-dark-theme  
 ```  
 Arguments  
 `npx install install-dark-theme --restore` - restore original theme
+
 `npx install install-dark-theme --force` - force theme installing 
+ 
   
 ### Option 2  
   Find your Slack's application directory.      
