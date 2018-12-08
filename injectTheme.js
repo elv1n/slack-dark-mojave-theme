@@ -56,7 +56,7 @@ Backup saved and you will be able restore original theme with 'npx install-dark-
 `);
   const applyTheme = fs.readFileSync(path.join(__dirname, 'applyTheme.txt'), 'utf-8');
   fs.appendFileSync(filePath, applyTheme);
-  console.log(blue(`Theme successfully injected!`));
+  console.log(blue(`Theme successfully applied!`));
 }
 
 function rewriteContent(content) {

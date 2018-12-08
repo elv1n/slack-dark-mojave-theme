@@ -1534,7 +1534,7 @@ nav {
 	background: var(--background-elevated);
 }
 
-.message__editor__save {
+.c-message__editor__save {
 	background: var(--primary);
 }
 
