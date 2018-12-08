@@ -4,10 +4,7 @@
   "description": "Telegram like Dark Mojave theme for slack",
   "main": "injectTheme.js",
   "bin": {
-    "install-theme": "./injectTheme.js"
-  },
-  "scripts": {
-    "run": "node ./injectTheme.js --restore"
+    "install-dark-theme": "./injectTheme.js"
   },
   "author": "Elvin Dzhavadov",
   "license": "MIT",
