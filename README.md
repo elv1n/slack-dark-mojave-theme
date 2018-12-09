@@ -1,8 +1,12 @@
 # Slack Dark Mojave Theme      
-A dark theme inspired by Telegram desktop Dark Mojave theme for Slack      
 [![npm monthly downloads](https://img.shields.io/npm/dm/install-dark-theme.svg)](https://www.npmjs.com/package/install-dark-theme)
 
-Project based on  [slack-black-theme](https://github.com/widget-/slack-black-theme). Thanks to [widget-](https://github.com/widget-) and contributors.    
+A dark theme inspired by Telegram desktop Dark Mojave theme for Slack      
+
+```shell  
+npx install-dark-theme  
+```  
+
 # Preview    
 ![Screenshot](https://raw.githubusercontent.com/elv1n/slack-dark-mojave-theme/master/preview.png)
     
@@ -11,12 +15,12 @@ Project based on  [slack-black-theme](https://github.com/widget-/slack-black-the
   
 ### Option 1  
 ```shell  
-npx install install-dark-theme  
+npx install-dark-theme  
 ```  
 Arguments  
-`npx install install-dark-theme --restore`  restore original theme
+`npx install-dark-theme --restore`  restore original theme
 
-`npx install install-dark-theme --force` force theme installing 
+`npx install-dark-theme --force` force theme installing 
  
   
 ### Option 2  
@@ -88,10 +92,7 @@ document.addEventListener('DOMContentLoaded',  function  ()  {
       
 That's it! Restart Slack and see how well it works.      
       
-# TODO      
-    
- - [ ] Development manual      
- - [x] npx script to execute theme into slack (if it's legal)      
-      
+# Credits    
+ Project based on  [slack-black-theme](https://github.com/widget-/slack-black-theme). Thanks to [widget-](https://github.com/widget-) and contributors. 
 # License      
  MIT
