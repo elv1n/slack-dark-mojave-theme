@@ -190,15 +190,18 @@ ts-jumper input[type="text"],
 	color: var(--text);
 }
 
-.p-channel_sidebar__channel--selected,
 .p-channel_sidebar__link--selected,
-.p-channel_sidebar__channel--selected:link,
 .p-channel_sidebar__link--selected:link,
 .p-channel_sidebar__channel--selected:visited,
 .p-channel_sidebar__link--selected:visited,
 .p-channel_sidebar__channel--selected:hover,
 .p-channel_sidebar__link--selected:hover {
 	background-color: var(--background) !important;
+}
+
+.p-channel_sidebar__channel--selected:link,
+.p-channel_sidebar__channel--selected {
+	background: var(--color-highlight)
 }
 
 .p-channel_sidebar__channel:hover,
@@ -653,35 +656,14 @@ ts-mention.ts_tip:hover {
 	border: 1px solid var(--border-bright);
 }
 
-/* emojis */
-.rxn[data-emoji] {
-	/*background-color: var(--background-light) !important;
-	transition: background-color 200ms ease-in;*/
-	height: 28px;
-}
-
-.rxn[data-emoji]:hover {
-	/*background-color: var(--background-bright) !important;*/
-}
-
-.rxn[data-emoji] .emoji_rxn_count {
-	font-size: 0.9rem;
-	/*color: black !important;*/
-}
-
-.rxn .emoji-sizer {
-	background-color: transparent !important;
-	border-radius: 7px;
-	width: 24px;
-	height: 24px;
-	margin: 0 0 0 -2px !important;
-	border: 1px solid transparent; /* looks silly but it makes the outline work */
-}
-
 .emoji-sizer {
 	/* outline for black-on-transparent emojis */
 	-webkit-filter: drop-shadow(1px 0 0 var(--background)) drop-shadow(-1px 0 0 var(--background)) drop-shadow(-0 1px 0 var(--background)) drop-shadow(0 -1px 0 var(--background));
 	margin: 0 !important;
+}
+
+.rxn.rxn_add_btn .c-icon--small-reaction {
+	color: var(--text-grey)
 }
 
 .ts_icon.ts_icon_smile_o {
@@ -1818,4 +1800,18 @@ ts-jumper .p-jumper__help {
 
 .c-archive_footer__title {
 	color: var(--text-bright);
+}
+
+.c-message--fade_highlight {
+	animation: fade-background-highlight 4s ease-in-out
+}
+
+@keyframes fade-background-highlight {
+	0% {
+		background: var(--background-hover)
+	}
+
+	to {
+		background: transparent
+	}
 }
