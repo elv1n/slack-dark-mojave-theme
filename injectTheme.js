@@ -42,7 +42,7 @@ function writeInterop(content) {
 function restoreBackUp() {
   if (fs.pathExistsSync(backupPath)) {
     fs.writeFileSync(filePath, fs.readFileSync(backupPath, 'utf-8'));
-    console.log(blue(`Backup restored`));
+    console.log(blue(`Theme restored from backup`));
   } else {
     log(`Backup not found`)
   }
@@ -52,7 +52,7 @@ function injectTheme() {
   fs.ensureFileSync(backupPath);
   fs.writeFileSync(backupPath, fs.readFileSync(filePath, 'utf-8'));
   console.log(`
-Backup saved and you will be able restore original theme with 'npx install-dark-theme --restore'
+Backup saved and you will be able restore original theme with 'npx install-dark-theme --rollback'
 `);
   const applyTheme = fs.readFileSync(path.join(__dirname, 'applyTheme.txt'), 'utf-8');
   fs.appendFileSync(filePath, applyTheme);
@@ -87,8 +87,8 @@ You can add theme manually or run 'npx-install-dark-theme --force
 try {
   fs.accessSync(filePath, fs.constants.R_OK | fs.constants.W_OK);
 
-  // Restore backup with argument --restore
-  if (options.restore) {
+  // Restore backup with argument --rollback
+  if (options.rollback) {
     return restoreBackUp();
   }
 
