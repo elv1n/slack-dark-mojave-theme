@@ -101,7 +101,7 @@ try {
     injectTheme();
   }
 } catch (e) {
-  log(`Cannot get access to ${filePath}`)
+  log(`Cannot get access to ${filePath}. Try with sudo or administrator power shell`)
 }
 
 
