@@ -6,6 +6,7 @@
   "bin": {
     "install-dark-theme": "./injectTheme.js"
   },
+  "repository": "elv1n/slack-dark-mojave-theme",
   "author": "Elvin Dzhavadov",
   "license": "MIT",
   "dependencies": {
