@@ -5,11 +5,24 @@ const fs = require('fs-extra');
 const path = require('path');
 const { options } = require('get-args')();
 const { red, blue } = require("colorette");
+const compareVersions = require('compare-versions');
+
+const isDirectory = source => fs.lstatSync(source).isDirectory()
 
 const typesDir = {
-  'Windows_NT': `${os.homedir()}/AppData/Local/slack/`,
-  'Darwin': '/Applications/Slack.app/Contents/',
-  'Linux': '/usr/lib/slack/'
+  'Windows_NT': () => {
+    const source = `${os.homedir()}/AppData/Local/slack/`;
+    const APP_KEY = 'app-';
+    const latestVersion = fs.readdirSync(source)
+      .filter(name => isDirectory(path.join(source, name)))
+      .filter(name => name.includes(APP_KEY))
+      .map(name => name.replace(APP_KEY, ''))
+      .sort((a, b) => compareVersions(b, a))[0];
+
+    return `${source}/${APP_KEY}${latestVersion}`
+  },
+  'Darwin': () => '/Applications/Slack.app/Contents/',
+  'Linux': () => '/usr/lib/slack/'
 };
 
 function log(info) {
@@ -20,8 +33,9 @@ Feel free to send an issue https://github.com/elv1n/slack-dark-mojave-theme/issu
   process.exit(0);
 }
 
-const systemType = os.type();
-const dir = typesDir[systemType];
+//const systemType = os.type();
+const systemType = 'Windows_NT';
+const dir = typesDir.hasOwnProperty(systemType) ? typesDir[systemType]() : null;
 const INTEROP_DIR = 'resources/app.asar.unpacked/src/static';
 const REGEX_THEME = /document.addEventListener(([\S\s]*))/gmi;
 const filePath = path.join(dir, INTEROP_DIR, 'ssb-interop.js');
