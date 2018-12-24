@@ -33,8 +33,7 @@ Feel free to send an issue https://github.com/elv1n/slack-dark-mojave-theme/issu
   process.exit(0);
 }
 
-//const systemType = os.type();
-const systemType = 'Windows_NT';
+const systemType = os.type();
 const dir = typesDir.hasOwnProperty(systemType) ? typesDir[systemType]() : null;
 const INTEROP_DIR = 'resources/app.asar.unpacked/src/static';
 const REGEX_THEME = /document.addEventListener(([\S\s]*))/gmi;
