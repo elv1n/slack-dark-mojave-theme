@@ -371,6 +371,9 @@ ts-message.highlight,
 ts-message:hover {
 	background: var(--background-hover) !important;
 }
+.tab_panels ts-message:hover {
+	background: none !important;
+}
 
 #messages_container::after {
 	background: none !important;
