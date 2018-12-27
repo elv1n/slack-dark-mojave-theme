@@ -1711,6 +1711,10 @@ ts-jumper .p-jumper__help {
 	color: var(--text-grey);
 }
 
+.presence.active {
+	color: var(--active-icon);
+}
+
 /* emoji */
 
 .c-menu.p-emoji_picker {
