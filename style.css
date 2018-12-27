@@ -20,7 +20,7 @@
 	--scrollbar-background: rgb(120, 120, 120);
 	--scrollbar-border: rgb(120, 120, 120);
 
-	--active-icon: rgb(209, 209, 209);
+	--active-icon: rgb(43, 107, 149);
 }
 
 h1, h2, h3, h4 {
@@ -114,6 +114,13 @@ ts-jumper input[type="text"],
 .p-message_pane__limited_history_foreword {
 	color: var(--text);
 	background: var(--background-elevated);
+}
+.p-channel_insights__date_heading span {
+	color: var(--text);
+	background: var(--background);
+}
+.p-channel_insights__message--truncate::before {
+	background: linear-gradient(180deg,transparent,var(--background) 90%);
 }
 
 .c-message--focus:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), .c-message--hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), .c-message:hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight) {
@@ -581,6 +588,10 @@ ts-message a.timestamp {
 
 #details_tab .channel_page_section {
 	background-color: var(--background-elevated);
+	border-top: 1px solid var(--text-grey);
+}
+#details_tab .conversation_details .member_info_timezone {
+	border-top: 1px solid var(--text-grey);
 }
 
 #details_tab .channel_page_section .section_title {
@@ -1314,6 +1325,7 @@ ts-jumper ts-jumper-container {
 
 .c-menu_item__header {
 	background: var(--background-hover);
+	color: var(--text);
 }
 
 .sidebar_menu_list_item {
@@ -1351,7 +1363,10 @@ ts-jumper ts-jumper-container {
 	color: var(--text-bright);
 }
 
-#member_preview_scroller .member_details .member_name_and_presence .member_name, #member_preview_web_container .member_details .member_name_and_presence .member_name, .menu_member_header .member_details .member_name_and_presence .member_name, .menu_member_header .member_details .member_current_status, .menu_member_header .member_details .member_timezone_value {
+#team_tab #member_preview_scroller .member_details .member_name_and_presence .member_name,
+#member_preview_scroller.member_details .member_name_and_presence .member_name,
+#member_preview_web_container .member_details .member_name_and_presence .member_name,
+.menu_member_header .member_details .member_name_and_presence .member_name, .menu_member_header .member_details .member_current_status, .menu_member_header .member_details .member_timezone_value {
 	color: var(--text);
 }
 
@@ -1804,6 +1819,14 @@ ts-jumper .p-jumper__help {
 
 .c-message--fade_highlight {
 	animation: fade-background-highlight 4s ease-in-out
+}
+
+#loading_welcome{
+	background: var(--background);
+}
+
+#loading_message p {
+	color: var(--text);
 }
 
 @keyframes fade-background-highlight {
