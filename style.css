@@ -128,8 +128,9 @@ ts-jumper input[type="text"],
 	background-color: transparent;
 }
 
-.c-message--light .c-message__sender .c-message__sender_link {
-	color: var(--text);
+.c-message--light .c-message__sender .c-message__sender_link,
+.c-message__sender a{
+	color: var(--text) !important;
 }
 
 .c-message_list__day_divider__line {
@@ -138,6 +139,10 @@ ts-jumper input[type="text"],
 
 .c-message__body {
 	color: var(--text);
+}
+
+.c-message_kit__file__meta {
+	color: var(--text-grey);
 }
 
 .c-message_list__day_divider__label__pill {
@@ -547,15 +552,11 @@ code {
 	background-color: transparent !important;
 }
 
-a, a:link, a:visited {
+a, a:link, a:visited, a:hover  {
 	color: var(--text-special);
 }
 
 ts-message a .mention {
-	color: var(--text-special) !important;
-}
-
-a:hover {
 	color: var(--text-special) !important;
 }
 
@@ -773,6 +774,16 @@ ts-mention.ts_tip:hover {
 }
 
 /* threads */
+.p-threads_flexpane__header_channel_name {
+	color: var(--text);
+}
+.p-threads_footer__input .p-message_input_field,
+.p-threads_footer__input--legacy .p-message_input_plus {
+	background: transparent;
+}
+.p-threads_footer__info_tooltip, .p-threads_flexpane__separator_count {
+	color: var(--text-grey);
+}
 ts-message .reply_bar:hover {
 	background: var(--background) !important;
 	border: 1px solid var(--border-dim) !important;
@@ -979,7 +990,12 @@ div::-webkit-scrollbar-thumb {
 	border: 0 1px 1px 1px solid var(--border-bright) !important;
 }
 
-#team_menu, #quick_switcher_btn, #team_menu_overlay, #col_channels_overlay {
+#team_menu,
+#quick_switcher_btn,
+#team_menu_overlay,
+#col_channels_overlay,
+body.feature-vogue #team_menu
+{
 	border-color: var(--border-dim);
 }
 
@@ -1327,7 +1343,6 @@ ts-jumper ts-jumper-container {
 /** menus **/
 
 .c-menu_item__header {
-	background: var(--background-hover);
 	color: var(--text);
 }
 
@@ -1503,6 +1518,12 @@ nav {
 	background: var(--background-elevated);
 }
 
+.c-button--primary {
+	background: var(--primary);
+}
+.c-button--disabled {
+	background: var(--background-bright);
+}
 .c-message_attachment__pretext {
 	color: var(--text);
 }
@@ -1714,8 +1735,13 @@ ts-jumper .p-jumper__help {
 	color: var(--text-grey);
 }
 
-.presence.active {
+.presence.active,
+.c-unified_member .presence.active, .c-unified_member__presence.active{
 	color: var(--active-icon);
+}
+
+.c-unified_member__display-name--large, .c-unified_member__title--large {
+	color: var(--text-grey);
 }
 
 /* emoji */
@@ -1834,6 +1860,11 @@ ts-jumper .p-jumper__help {
 
 #loading_message p {
 	color: var(--text);
+}
+
+/* Upload file */
+.c-label__text {
+	color: var(--text-grey);
 }
 
 @keyframes fade-background-highlight {
