@@ -141,6 +141,10 @@ ts-jumper input[type="text"],
 	color: var(--text);
 }
 
+.c-message_kit__background--editing {
+	background: transparent;
+}
+
 .c-message_kit__file__meta {
 	color: var(--text-grey);
 }
