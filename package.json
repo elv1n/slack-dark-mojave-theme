@@ -6,6 +6,9 @@
   "bin": {
     "install-dark-theme": "./injectTheme.js"
   },
+  "scripts": {
+    "prepublish": "uglifycss style.css --output theme.css"
+  },
   "repository": "elv1n/slack-dark-mojave-theme",
   "author": "Elvin Dzhavadov",
   "license": "MIT",
@@ -14,5 +17,8 @@
     "compare-versions": "^3.4.0",
     "fs-extra": "^7.0.1",
     "get-args": "^2.0.0"
+  },
+  "devDependencies": {
+    "uglifycss": "^0.0.29"
   }
 }
