@@ -1,6 +1,6 @@
 {
   "name": "install-dark-theme",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Telegram like Dark Mojave theme for slack",
   "main": "injectTheme.js",
   "bin": {
