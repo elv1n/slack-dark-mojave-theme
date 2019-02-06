@@ -31,7 +31,7 @@ Arguments
   Find your Slack's application directory.      
       
 * Windows: `%homepath%\AppData\Local\slack\app-3.3.0\resources\app.asar.unpacked\src\static`  
-* Mac: `/Applications/Slack.app/Contents/resources/app.asar.unpacked/src/static`  
+* Mac: `/Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static`  
 * Linux: `/usr/lib/slack/resources/app.asar.unpacked/src/static` (Debian-based)      
       
 Open `ssb-interop.js` and add at the very bottom     
