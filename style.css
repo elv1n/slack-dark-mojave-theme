@@ -172,7 +172,7 @@ ts-jumper input[type="text"],
 }
 
 .c-message_attachment__border {
-	background-color: var(--background-elevated) !important;
+	background-color: var(--background-hover) !important;
 }
 
 .c-member_slug--link {
@@ -782,12 +782,18 @@ ts-mention.ts_tip:hover {
 	color: var(--text);
 }
 .p-threads_footer__input .p-message_input_field,
+.p-threads_footer__input .p-message_input_file_button,
 .p-threads_footer__input--legacy .p-message_input_plus {
 	background: transparent;
 }
 .p-threads_footer__info_tooltip, .p-threads_flexpane__separator_count {
 	color: var(--text-grey);
 }
+
+.p-threads_footer__input--legacy .p-message_input_file_button.p-message_input_file_button--active, .p-threads_footer__input--legacy .p-message_input_file_button:hover {
+	background: var(--primary);
+}
+
 ts-message .reply_bar:hover {
 	background: var(--background) !important;
 	border: 1px solid var(--border-dim) !important;
@@ -1001,6 +1007,10 @@ div::-webkit-scrollbar-thumb {
 body.feature-vogue #team_menu
 {
 	border-color: var(--border-dim);
+}
+
+#col_channels_overlay {
+	background: var(--background);
 }
 
 .team_menu.slack_menu .menu_body, .team_menu.slack_menu .scrolling .menu_body {
@@ -1346,7 +1356,7 @@ ts-jumper ts-jumper-container {
 
 /** menus **/
 
-.c-menu_item__header {
+.c-menu_item__header, .c-menu_item__icon {
 	color: var(--text);
 }
 
@@ -1452,6 +1462,10 @@ ts-jumper ts-jumper-container {
 
 .p-flexpane_header {
 	background: var(--background);
+}
+
+.p-flexpane_header__control:hover {
+	color: var(--text);
 }
 
 .p-downloads_list__shift_hint {
@@ -1582,6 +1596,13 @@ nav {
 
 .c-pillow_file_container {
 	background: var(--background);
+	border-color: var(--background-hover);
+}
+.c-pillow_file__swap .c-pillow_file__slide {
+	background: var(--background);
+}
+.c-pillow_file_container:focus, .c-pillow_file_container:focus-within, .c-pillow_file_container:hover {
+	border-color: var(--background-hover);
 }
 
 .c-input_select {
@@ -1622,7 +1643,9 @@ nav {
 .c-pillow_file__description {
 	color: var(--text-bright);
 }
-
+.c-pillow_file__content--collapsed:after {
+	background: linear-gradient(0deg,var(--background),hsla(0,0%,100%,0) 40px)
+}
 .c-input_select_options_list_container:not(.c-input_select_options_list_container--always-open) {
 	background-color: var(--background);
 }
@@ -1746,6 +1769,9 @@ ts-jumper .p-jumper__help {
 
 .c-unified_member__display-name--large, .c-unified_member__title--large {
 	color: var(--text-grey);
+}
+.p-message_pane__newxp_foreword--start, .p-message_pane__newxp_foreword__header {
+	color: var(--text);
 }
 
 /* emoji */
