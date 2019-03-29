@@ -149,7 +149,7 @@ ts-jumper input[type="text"],
 	color: var(--text-grey);
 }
 
-.c-message_list__day_divider__label__pill {
+.c-message_list__day_divider__label__pill, .p-threads_view__divider_label {
 	background: var(--background-elevated);
 	color: var(--text-bright);
 }
@@ -546,7 +546,9 @@ code {
 	border: 1px solid var(--scrollbar-border) !important;
 	background-color: transparent !important;
 }
-
+.supports_custom_scrollbar:not(.slim_scrollbar) .tab_complete_ui .tab_complete_ui_scroller::-webkit-scrollbar {
+	width: 8px;
+}
 .supports_custom_scrollbar:not(.slim_scrollbar) #archive_msgs_scroller_div::-webkit-scrollbar-track,
 .supports_custom_scrollbar:not(.slim_scrollbar) #msgs_scroller_div::-webkit-scrollbar-track,
 .supports_custom_scrollbar:not(.slim_scrollbar) #col_channels:hover #channels_scroller::-webkit-scrollbar-track {
@@ -781,6 +783,9 @@ ts-mention.ts_tip:hover {
 .p-threads_flexpane__header_channel_name {
 	color: var(--text);
 }
+.p-threads_view,
+.p-threads_view__default_background,
+.p_threads_view_load_older_button,
 .p-threads_footer__input .p-message_input_field,
 .p-threads_footer__input .p-message_input_file_button,
 .p-threads_footer__input--legacy .p-message_input_plus {
@@ -788,6 +793,10 @@ ts-mention.ts_tip:hover {
 }
 .p-threads_footer__info_tooltip, .p-threads_flexpane__separator_count {
 	color: var(--text-grey);
+}
+
+.p-threads_view_root, .p-threads_view_reply, .p-threads_view__footer {
+	border: 0;
 }
 
 .p-threads_footer__input--legacy .p-message_input_file_button.p-message_input_file_button--active, .p-threads_footer__input--legacy .p-message_input_file_button:hover {
@@ -808,6 +817,10 @@ ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-messa
 #message_edit_container .message_input{
 	background: var(--background);
 	border-color: var(--border-dim);
+}
+
+.p-threads_view_header__permalink {
+	color: var(--text) !important;
 }
 
 /* editor in thread reply */
@@ -1488,6 +1501,10 @@ ts-jumper ts-jumper-container {
 	color: var(--text-bright);
 }
 
+.c-message_attachment__author--distinct {
+	color: var(--text);
+}
+
 .c-file_container--has_thumb .c-file__actions:before {
 	background-image: none;
 }
@@ -1652,6 +1669,10 @@ nav {
 
 .p-file_list__file_type_select .c-input_select__selected_value--placeholder {
 	color: var(--text);
+}
+
+.c-input_select__secondary_member_name {
+	color: var(--text-grey);
 }
 
 .c-input_select_options_list__option {
