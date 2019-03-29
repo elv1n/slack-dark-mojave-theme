@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "node ./utils/build",
-    "start": "http-server ./"
+    "start": "http-server ./dist"
   },
   "repository": "elv1n/slack-dark-mojave-theme",
   "author": "Elvin Dzhavadov",

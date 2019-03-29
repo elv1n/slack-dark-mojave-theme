@@ -10,9 +10,10 @@ const COPY = [
   'README.md',
   'preview.png'
 ];
+
 ((async () => {
   const ugly = processFiles(['./style.css']);
-  const cssFile = crypto.randomBytes(16).toString('hex') + '.css';
+  const cssFile = process.env.COMMIT_REF + '.css';
   await fs.ensureDir(DIST);
   await fs.emptyDir(DIST);
   await fs.writeFile(join(DIST, cssFile), ugly);
@@ -29,7 +30,7 @@ const COPY = [
     {
       spaces: 2
     }
-  )
+  );
   const copyMapper = async name => fs.copy(name, join(DIST, name));
   await Promise.all(COPY.map(copyMapper));
 })());
