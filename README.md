@@ -92,6 +92,14 @@ require('fs').watchFile(customTheme, createStyle);
 document.addEventListener('DOMContentLoaded', createStyle);
 ```
 
+**Open slack**
+
+Mac: `export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app`
+
+Linux: (todo)
+
+Windows: (todo)
+
 # Credits    
  Project based on  [slack-black-theme](https://github.com/widget-/slack-black-theme). Thanks to [widget-](https://github.com/widget-) and contributors. 
 
