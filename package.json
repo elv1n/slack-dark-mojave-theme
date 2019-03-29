@@ -8,7 +8,7 @@
   },
   "scripts": {
     "prepublishOnly": "node ./utils/build",
-    "release": "np minor --no-yarn --contents=dist",
+    "release": "np prepatch --no-yarn --contents=dist --tag next",
     "start": "http-server ./"
   },
   "repository": "elv1n/slack-dark-mojave-theme",
