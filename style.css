@@ -788,7 +788,8 @@ ts-mention.ts_tip:hover {
 .p_threads_view_load_older_button,
 .p-threads_footer__input .p-message_input_field,
 .p-threads_footer__input .p-message_input_file_button,
-.p-threads_footer__input--legacy .p-message_input_plus {
+.p-threads_footer__input--legacy .p-message_input_plus,
+.p-threads_view .p-threads_view__top_banners:not(:empty):before{
 	background: transparent;
 }
 .p-threads_footer__info_tooltip, .p-threads_flexpane__separator_count {
@@ -803,7 +804,7 @@ ts-mention.ts_tip:hover {
 	background: var(--background-hover);
 }
 
-.p-threads_footer__input--legacy .p-message_input_file_button.p-message_input_file_button--active, .p-threads_footer__input--legacy .p-message_input_file_button:hover {
+.p-new_threads_banner, .p-threads_footer__input--legacy .p-message_input_file_button.p-message_input_file_button--active, .p-threads_footer__input--legacy .p-message_input_file_button:hover {
 	background: var(--primary);
 }
 
