@@ -317,7 +317,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 	color: var(--text) !important;
 }
 
-.p-channel_sidebar__channel--im .c-presence--active, .p-channel_sidebar__channel--im-slackbot:before,
+.c-presence--active, .p-channel_sidebar__channel--im-slackbot:before,
 #presence.active:before {
 	color: var(--active-icon) !important;
 }
@@ -797,6 +797,10 @@ ts-mention.ts_tip:hover {
 
 .p-threads_view_root, .p-threads_view_reply, .p-threads_view__footer {
 	border: 0;
+}
+
+.p-threads_view_reply--new_reply {
+	background: var(--background-hover);
 }
 
 .p-threads_footer__input--legacy .p-message_input_file_button.p-message_input_file_button--active, .p-threads_footer__input--legacy .p-message_input_file_button:hover {
