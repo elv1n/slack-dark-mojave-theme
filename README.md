@@ -39,7 +39,7 @@ Open `ssb-interop.js` and add at the very bottom
 ```js      
 document.addEventListener('DOMContentLoaded', function () {
     $.ajax({
-        url: 'https://unpkg.com/install-dark-theme/theme.css',
+        url: 'https://unpkg.com/install-dark-theme',
         success: function (css) {
             $("<style></style>").appendTo('head').html(css);
         }

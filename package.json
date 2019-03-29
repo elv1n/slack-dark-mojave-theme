@@ -7,7 +7,8 @@
     "install-dark-theme": "./injectTheme.js"
   },
   "scripts": {
-    "prepublishOnly": "uglifycss style.css --output theme.css",
+    "prepublishOnly": "node ./utils/build",
+    "release": "np minor --no-yarn --contents=dist",
     "start": "http-server ./"
   },
   "repository": "elv1n/slack-dark-mojave-theme",
