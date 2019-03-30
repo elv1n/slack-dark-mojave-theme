@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     $.ajax({
-        url: 'https://unpkg.com/install-dark-theme/theme.css',
+        url: 'https://dark-theme.netlify.com',
         success: function (css) {
             $("<style></style>").appendTo('head').html(css);
         }

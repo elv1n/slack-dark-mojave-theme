@@ -1,5 +1,5 @@
 # Slack Dark Mojave Theme      
-[![npm monthly downloads](https://img.shields.io/npm/dm/install-dark-theme.svg)](https://www.npmjs.com/package/install-dark-theme)
+[![npm monthly downloads](https://img.shields.io/npm/dm/install-dark-theme.svg)](https://www.npmjs.com/package/install-dark-theme) [![Netlify Status](https://api.netlify.com/api/v1/badges/c39c1370-0a3e-45c0-89c7-d5dc594c4285/deploy-status)](https://app.netlify.com/sites/dark-theme/deploys)
 
 A dark theme inspired by Telegram desktop Dark Mojave theme for Slack      
 
@@ -9,7 +9,9 @@ A dark theme inspired by Telegram desktop Dark Mojave theme for Slack
 npx install-dark-theme
 // rollback original theme
 npx install-dark-theme --rollback  
-```  
+```
+
+**If you already using dark-theme reinstall theme again to have latest changes, new link is `https://dark-theme.netlify.com`**
 
 # Preview    
 ![Screenshot](https://raw.githubusercontent.com/elv1n/slack-dark-mojave-theme/master/preview.png)
@@ -39,7 +41,7 @@ Open `ssb-interop.js` and add at the very bottom
 ```js      
 document.addEventListener('DOMContentLoaded', function () {
     $.ajax({
-        url: 'https://unpkg.com/install-dark-theme/theme.css',
+        url: 'https://dark-theme.netlify.com',
         success: function (css) {
             $("<style></style>").appendTo('head').html(css);
         }
