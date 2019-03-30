@@ -7,6 +7,11 @@ async@^1.5.2:
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
   integrity sha1-7GphrlZIDAw8skHJVhjiCJL5Zyo=
 
+build-create-react-app-netlify@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/build-create-react-app-netlify/-/build-create-react-app-netlify-1.1.2.tgz#19c4db573e1c933277fb73ebc9f84366c5960099"
+  integrity sha512-HxjfGoTt7Il0MQIx1LwZ/EaahOPOlNt9aULuOaIT8BlgG412sE7KBUhVFB+x91Qzzu5Z56R79ta3r9aRD68gPg==
+
 colorette@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.0.7.tgz#7adf43c445ee63a541b4a4aef7d13f03df1e0cc0"

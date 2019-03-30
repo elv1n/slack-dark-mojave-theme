@@ -13,7 +13,7 @@ const COPY = [
 
 ((async () => {
   const ugly = processFiles(['./style.css']);
-  const cssFile = process.env.COMMIT_REF + '.css';
+  const cssFile = process.env.REACT_APP_DEPLOY_URL + '.css';
   await fs.ensureDir(DIST);
   await fs.emptyDir(DIST);
   await fs.writeFile(join(DIST, cssFile), ugly);
@@ -25,7 +25,7 @@ const COPY = [
     {
       ...pkg,
       scripts: {},
-      main:  cssFile
+      main: cssFile
     },
     {
       spaces: 2
