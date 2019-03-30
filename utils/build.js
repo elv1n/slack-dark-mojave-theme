@@ -13,7 +13,7 @@ const COPY = [
 
 ((async () => {
   const ugly = processFiles(['./style.css']);
-  const cssFile = process.env.REACT_APP_DEPLOY_URL + '.css';
+  const cssFile = crypto.randomBytes(16).toString('hex') + '.css';
   await fs.ensureDir(DIST);
   await fs.emptyDir(DIST);
   await fs.writeFile(join(DIST, cssFile), ugly);
@@ -33,4 +33,12 @@ const COPY = [
   );
   const copyMapper = async name => fs.copy(name, join(DIST, name));
   await Promise.all(COPY.map(copyMapper));
+  await fs.writeFile('./netlify.toml', `
+  [[redirects]]
+    from = "/"
+    to = "/${cssFile}"
+    status = 302
+    force = true
+    headers = {Access-Control-Allow-Origin = "*"}
+  `)
 })());

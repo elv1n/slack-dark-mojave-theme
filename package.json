@@ -8,8 +8,7 @@
   },
   "scripts": {
     "start": "http-server ./dist",
-    "build": "node ./utils/build",
-    "build-netlify": "build-create-react-app-netlify"
+    "build": "node ./utils/build"
   },
   "repository": "elv1n/slack-dark-mojave-theme",
   "author": "Elvin Dzhavadov",
@@ -21,7 +20,6 @@
     "get-args": "^2.0.0"
   },
   "devDependencies": {
-    "build-create-react-app-netlify": "^1.1.2",
     "http-server": "^0.11.1",
     "uglifycss": "^0.0.29"
   }
