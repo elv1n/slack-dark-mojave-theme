@@ -27,7 +27,7 @@ h1, h2, h3, h4 {
 	color: var(--text);
 }
 
-body {
+html, body {
 	background: var(--background);
 	color: var(--text);
 }
@@ -474,6 +474,7 @@ ts-message .action_hover_container .btn_msg_action,
 .search_segmented_control,
 .menu {
 	border-color: var(--border-dim) !important;
+	border: '1px solid';
 }
 
 .search_result_with_extract {
@@ -1269,6 +1270,13 @@ ts-jumper ts-jumper-container {
 .c-search_autocomplete__suggestion_item {
 	color: var(--text);
 }
+.c-search_autocomplete__suggestion_item .token {
+	color: var(--text-grey);
+}
+
+.c-search_autocomplete__suggestion_item--selected {
+	background: var(--background-hover);
+}
 
 .c-search__input_and_close {
 	border-bottom-color: var(--border-dim)
@@ -1741,6 +1749,9 @@ nav {
 	background: var(--background);
 	border: 1px solid var(--border-dim);
 }
+.c-reaction:hover {
+	background: var(--background-hover);
+}
 
 .c-reaction__count {
 	color: var(--text-bright);
@@ -1826,7 +1837,7 @@ ts-jumper .p-jumper__help {
 	border: 0;
 }
 
-.c-message__reply_bar--focus, .c-message__reply_bar:hover {
+.p-emoji_picker__skintone_options--visible, .c-message__reply_bar--focus, .c-message__reply_bar:hover {
 	background: var(--background-hover);
 }
 
@@ -1917,7 +1928,12 @@ ts-jumper .p-jumper__help {
 #loading_message p {
 	color: var(--text);
 }
+/* Search input */
 
+.c-react_search_input:hover .search_input_wrapper *, .c-react_search_input:hover .icon_search_wrapper * {
+	color: var(--text-grey)!important;
+}
+/* Search input end */
 /* Upload file */
 .c-label__text {
 	color: var(--text-grey);

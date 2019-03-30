@@ -43,6 +43,13 @@ const COPY = [
   [headers.values]
     Access-Control-Allow-Origin = "*"
     Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "no-cache"
     Cache-Tag = "redirect, index-redirect"
-  `)
+    Last-Modified = "${(new Date()).toUTCString()}"
+`)
 })());
