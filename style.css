@@ -1550,7 +1550,7 @@ nav {
 }
 
 /* actions */
-.c-button--outline {
+.c-button--outline, .c-button--outline:link, .c-button--outline:visited {
 	background: var(--background-elevated);
 	color: var(--text);
 }
@@ -1560,8 +1560,9 @@ nav {
 	color: var(--text-bright);
 }
 
-.c-button--outline-primary {
+.c-button--outline-primary, .c-button--outline-primary:link, .c-button--outline-primary:visited {
 	color: var(--primary);
+	border: 1px solid var(--primary);
 	box-shadow: inset 0 0 0 1px var(--primary);
 	background: var(--background-elevated);
 }
