@@ -1577,6 +1577,10 @@ nav {
 	color: var(--text);
 }
 
+.c-link--button:active, .c-link--button:hover {
+	color: var(--text);
+}
+
 /* dialogs */
 .c-dialog__header {
 	background: var(--background-elevated);
