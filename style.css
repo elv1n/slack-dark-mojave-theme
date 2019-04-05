@@ -1939,6 +1939,20 @@ ts-jumper .p-jumper__help {
 	color: var(--text-grey)!important;
 }
 /* Search input end */
+
+/* Icon button light */
+
+.c-icon_button--light, .c-icon_button--light.c-button-unstyled, .c-icon_button--light:link {
+	color: var(--text);
+}
+
+.c-icon_button--light.c-button-unstyled:hover, .c-icon_button--light:hover, .c-icon_button--light:link:hover {
+	color: var(--text-bright);
+}
+
+/* Icon button light end */
+
+
 /* Upload file */
 .c-label__text {
 	color: var(--text-grey);
