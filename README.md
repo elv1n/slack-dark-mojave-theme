@@ -98,9 +98,9 @@ document.addEventListener('DOMContentLoaded', createStyle);
 
 Mac: `export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app`
 
-Linux: (todo)
+Windows: `C:\Windows\System32\cmd.exe /c " SET SLACK_DEVELOPER_MENU=TRUE && start C:\Users\CHANG_USER\AppData\Local\slack\slack.exe`
 
-Windows: (todo)
+*Change windows user!*
 
 # Credits    
  Project based on  [slack-black-theme](https://github.com/widget-/slack-black-theme). Thanks to [widget-](https://github.com/widget-) and contributors. 
