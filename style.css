@@ -122,6 +122,9 @@ ts-jumper input[type="text"],
 .p-channel_insights__message--truncate::before {
 	background: linear-gradient(180deg,transparent,var(--background) 90%);
 }
+.p-channel_insights__channel .channel_link {
+	color: var(--text);
+}
 
 .c-message--focus:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), .c-message--hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight), .c-message:hover:not(.c-message--highlight):not(.c-message--standalone):not(.c-message--pinned):not(.c-message--ephemeral):not(.c-message--custom_response):not(.c-message--starred):not(.c-message--sli_highlight) {
 / / background-color: var(--background-hover);
@@ -601,13 +604,20 @@ ts-message a.timestamp {
 	background-color: var(--background-elevated);
 	border-top: 1px solid var(--text-grey);
 }
+
 #details_tab .conversation_details .member_info_timezone {
 	border-top: 1px solid var(--text-grey);
 }
 
-#details_tab .channel_page_section .section_title {
+#details_tab .channel_page_section .section_title{
 	color: var(--text);
 }
+
+#details_tab .channel_page_section .disclosure_triangle, #details_tab .channel_page_section .section_header:hover .disclosure_triangle  {
+	color: var(--text-grey)
+}
+
+
 
 .greigh {
 	/* greigh = label?? */
@@ -781,6 +791,9 @@ ts-mention.ts_tip:hover {
 }
 
 /* threads */
+.p-threads_view {
+
+}
 .p-threads_flexpane__header_channel_name {
 	color: var(--text);
 }
