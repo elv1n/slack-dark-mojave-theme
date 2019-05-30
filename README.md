@@ -71,7 +71,7 @@ Open `ssb-interop.js` and add at the very bottom
 
 **1. Comment the part related to installation from section above!**
 
-**2. Replace constant `customTheme`**
+**2. Copy text and replace constant `customTheme`**
 
 ```js
 // Change to path to style.css in repository
@@ -93,6 +93,8 @@ const createStyle = () => {
 require('fs').watchFile(customTheme, createStyle);
 document.addEventListener('DOMContentLoaded', createStyle);
 ```
+
+**3. Run command "yarn start" in repo**
 
 **Open slack**
 

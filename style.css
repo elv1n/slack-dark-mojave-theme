@@ -122,7 +122,7 @@ ts-jumper input[type="text"],
 .p-channel_insights__message--truncate::before {
 	background: linear-gradient(180deg,transparent,var(--background) 90%);
 }
-.p-channel_insights__channel .channel_link {
+.p-channel_insights__channel .channel_link, .p-file_details__share_channel {
 	color: var(--text);
 }
 
@@ -418,7 +418,9 @@ ts-message .action_hover_container .btn_msg_action,
 .btn, .btn_outline {
 	background: var(--background-elevated) !important;
 }
-
+.c-pillow_file__snippet__content .CodeMirror-code>div:before {
+	color: var(--text-grey);
+}
 #col_channels {
 	border-right: 1px solid var(--border-dim);
 }
@@ -1395,7 +1397,7 @@ ts-jumper ts-jumper-container {
 
 /** menus **/
 
-.c-menu_item__header, .c-menu_item__icon {
+.c-menu_item__header, .c-menu_item__icon, .c-menu_item__link_icon, .c-menu_item__shortcut {
 	color: var(--text);
 }
 
@@ -1773,6 +1775,10 @@ nav {
 
 .c-reaction__count {
 	color: var(--text-bright);
+}
+.c-reaction--reacted:not(.c-button--focus-visible), .c-reaction--reacted:not(.focus-ring) {
+	box-shadow: inset 0 0 0 1px var(--primary);
+	border-color: var(--primary);
 }
 
 /* tooltips */
