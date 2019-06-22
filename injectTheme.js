@@ -96,25 +96,34 @@ You can add theme manually or run 'npx-install-dark-theme --force
   }
 }
 
-
-try {
-  fs.accessSync(filePath, fs.constants.R_OK | fs.constants.W_OK);
-
-  // Restore backup with argument --rollback
-  if (options.rollback) {
-    return restoreBackUp();
+(async() => {
+  if (!await fs.pathExists(filePath)) {
+    log(`
+Cannot find a file ${filePath}.
+If your Slack version 4 or higher theme cannot be injected https://github.com/elv1n/slack-dark-mojave-theme/issues/7
+`)
   }
 
-  const content = fs.readFileSync(filePath, 'utf-8');
-  // Check if anything runs on DOMContentLoaded
-  // the same event will be used for applying theme
-  if(content.includes('DOMContentLoaded')) {
-    rewriteContent(content);
-  } else {
-    injectTheme();
+  try {
+    fs.access(filePath, fs.constants.R_OK | fs.constants.W_OK);
+
+    // Restore backup with argument --rollback
+    if (options.rollback) {
+      return restoreBackUp();
+    }
+
+    const content = await fs.readFile(filePath, 'utf-8');
+    // Check if anything runs on DOMContentLoaded
+    // the same event will be used for applying theme
+    if(content.includes('DOMContentLoaded')) {
+      rewriteContent(content);
+    } else {
+      injectTheme();
+    }
+  } catch (e) {
+    console.log(e);
+    log(`Cannot get access to ${filePath}. Try with sudo or administrator power shell`)
   }
-} catch (e) {
-  log(`Cannot get access to ${filePath}. Try with sudo or administrator power shell`)
-}
+})();
 
 
