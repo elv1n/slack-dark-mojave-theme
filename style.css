@@ -478,8 +478,8 @@ ts-message .action_hover_container .btn_msg_action,
 #flex_contents .subheading,
 .search_segmented_control,
 .menu {
-	border-color: var(--border-dim) !important;
-	border: '1px solid';
+	background: var(--background);
+	border: 1px solid var(--border-dim) !important;
 }
 
 .search_result_with_extract {
@@ -1285,7 +1285,8 @@ ts-jumper ts-jumper-container {
 .c-search_autocomplete__suggestion_item {
 	color: var(--text);
 }
-.c-search_autocomplete__suggestion_item .token {
+.c-search_autocomplete__suggestion_item .token,
+.c-search_autocomplete__member .c-unified_member__name {
 	color: var(--text-grey);
 }
 
@@ -1334,7 +1335,7 @@ ts-jumper ts-jumper-container {
 	background: var(--background-hover);
 }
 
-.channel_options_modal .c-fullscreen_modal__title {
+.c-fullscreen_modal__body, .channel_options_modal .c-fullscreen_modal__title {
 	color: var(--text);
 }
 
@@ -1514,7 +1515,10 @@ ts-jumper ts-jumper-container {
 }
 
 .p-download_item {
-	border: 1px solid var(--border-dim);
+	border:0;
+	border-radius: 0;
+	border-bottom: 1px solid var(--border-dim);
+	margin: 0;
 }
 
 .p-download_item__container .p-download_item__name_row {
@@ -1522,7 +1526,7 @@ ts-jumper ts-jumper-container {
 }
 
 .p-download_item__actions {
-	background: var(--background-hover);
+	background: transparent;
 }
 
 .c-message_attachment {
@@ -1773,7 +1777,7 @@ nav {
 	background: var(--background-hover);
 }
 
-.c-reaction__count {
+.c-reaction__count, .rxn .emoji_rxn_count {
 	color: var(--text-bright);
 }
 .c-reaction--reacted:not(.c-button--focus-visible), .c-reaction--reacted:not(.focus-ring) {
@@ -1975,6 +1979,12 @@ ts-jumper .p-jumper__help {
 /* Upload file */
 .c-label__text {
 	color: var(--text-grey);
+}
+
+/* settings */
+
+.c-sidebar_menu__list_item {
+	color: var(--text);
 }
 
 @keyframes fade-background-highlight {
