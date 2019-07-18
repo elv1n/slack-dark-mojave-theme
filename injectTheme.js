@@ -6,8 +6,10 @@ const path = require('path');
 const { options } = require('get-args')();
 const { red, blue } = require("colorette");
 const compareVersions = require('compare-versions');
+const spawn = require('cross-spawn');
 
-const isDirectory = source => fs.lstatSync(source).isDirectory()
+const { join } = path;
+const isDirectory = source => fs.lstatSync(source).isDirectory();
 
 const typesDir = {
   'Windows_NT': () => {
@@ -33,11 +35,27 @@ Feel free to send an issue https://github.com/elv1n/slack-dark-mojave-theme/issu
   process.exit(0);
 }
 
+function blueLog(info) {
+  console.log(blue(`
+${info}
+`));
+}
+
 const systemType = os.type();
 const dir = typesDir.hasOwnProperty(systemType) ? typesDir[systemType]() : null;
-const INTEROP_DIR = 'resources/app.asar.unpacked/src/static';
+const RESOURCES = join(dir, 'resources');
+const INTEROP_DIR = path.join(RESOURCES, 'resources/app.asar.unpacked/dist');
 const REGEX_THEME = /document.addEventListener(([\S\s]*))/gmi;
-const filePath = path.join(dir, INTEROP_DIR, 'ssb-interop.js');
+
+const APP_TEMP = join(RESOURCES, 'temp.app.asar');
+const FILES = {
+  APP: join(RESOURCES, 'app.asar'),
+  APP_TEMP,
+  BUNDLE: join(APP_TEMP, 'dist/ssb-interop.bundle.js'),
+  BACKUP: join(APP_TEMP, 'dist/interop_themed_backup.bundle.js')
+};
+
+const filePath = path.join(dir, INTEROP_DIR, 'ssb-interop.bundle.js');
 const backupPath = path.join(dir, INTEROP_DIR, 'interop_themed_backup.js');
 
 if (!dir) {
@@ -61,14 +79,15 @@ function restoreBackUp() {
   }
 }
 
-function injectTheme() {
-  fs.ensureFileSync(backupPath);
-  fs.writeFileSync(backupPath, fs.readFileSync(filePath, 'utf-8'));
+async function injectTheme() {
+  if (! await fs.pathExists(FILES.BUNDLE)) {
+    await fs.writeFile(FILES.BACKUP, fs.readFileSync(FILES.BUNDLE, 'utf-8'));
+  }
   console.log(`
 Backup saved and you will be able restore original theme with 'npx install-dark-theme --rollback'
 `);
-  const applyTheme = fs.readFileSync(path.join(__dirname, 'applyTheme.txt'), 'utf-8');
-  fs.appendFileSync(filePath, applyTheme);
+  const applyTheme = await fs.readFile(path.join(__dirname, 'applyTheme.txt'), 'utf-8');
+  await fs.appendFile(FILES.BUNDLE, applyTheme);
   console.log(blue(`Theme successfully applied!`));
 }
 
@@ -97,29 +116,30 @@ You can add theme manually or run 'npx-install-dark-theme --force
 }
 
 (async() => {
-  if (!await fs.pathExists(filePath)) {
-    log(`
-Cannot find a file ${filePath}.
-If your Slack version 4 or higher theme cannot be injected https://github.com/elv1n/slack-dark-mojave-theme/issues/7
-`)
+  spawn.sync('npx', ['asar', 'extract', FILES.APP, FILES.APP_TEMP]);
+  if (!await fs.pathExists(FILES.BUNDLE)) {
+    log(`Cannot find a file ${FILES.BUNDLE}.`)
   }
 
   try {
-    fs.access(filePath, fs.constants.R_OK | fs.constants.W_OK);
+    await fs.access(FILES.BUNDLE, fs.constants.R_OK | fs.constants.W_OK);
 
-    // Restore backup with argument --rollback
-    if (options.rollback) {
-      return restoreBackUp();
-    }
+    //// Restore backup with argument --rollback
+    //if (options.rollback) {
+    //  return restoreBackUp();
+    //}
 
-    const content = await fs.readFile(filePath, 'utf-8');
+    //const content = await fs.readFile(FILES.BUNDLE, 'utf-8');
     // Check if anything runs on DOMContentLoaded
     // the same event will be used for applying theme
-    if(content.includes('DOMContentLoaded')) {
-      rewriteContent(content);
-    } else {
-      injectTheme();
-    }
+    //if(content.includes('DOMContentLoaded')) {
+    //  rewriteContent(content);
+    //} else {
+    //  injectTheme();
+    //}
+
+    await injectTheme();
+    spawn.sync('npx', ['asar', 'pack', FILES.APP_TEMP, FILES.APP]);
   } catch (e) {
     console.log(e);
     log(`Cannot get access to ${filePath}. Try with sudo or administrator power shell`)

@@ -1,14 +1,19 @@
 # Slack Dark Mojave Theme      
 [![npm monthly downloads](https://img.shields.io/npm/dm/install-dark-theme.svg)](https://www.npmjs.com/package/install-dark-theme) [![Netlify Status](https://api.netlify.com/api/v1/badges/c39c1370-0a3e-45c0-89c7-d5dc594c4285/deploy-status)](https://app.netlify.com/sites/dark-theme/deploys)
 
-A dark theme inspired by Telegram desktop Dark Mojave theme for Slack      
+A dark theme inspired by Telegram desktop Dark Mojave theme for Slack 3+ and 4+      
 
 ## Quick overview
 ```shell  
-// install theme
-npx install-dark-theme
-// rollback original theme
-npx install-dark-theme --rollback  
+// install theme for Slack 4+
+npx install-dark-theme  
+```
+
+```shell  
+// install theme for Slack 3
+npx install-dark-theme@1.0.1
+// rollback original theme. Rollback working only for Slack 3 now
+npx install-dark-theme --rollback
 ```
 
 **If you already using dark-theme reinstall theme again to have latest changes, new link is `https://dark-theme.netlify.com`**

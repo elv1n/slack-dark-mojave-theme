@@ -16,6 +16,7 @@
   "dependencies": {
     "colorette": "^1.0.7",
     "compare-versions": "^3.4.0",
+    "cross-spawn": "^6.0.5",
     "fs-extra": "^7.0.1",
     "get-args": "^2.0.0"
   },
