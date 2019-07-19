@@ -1,9 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('https://dark-theme.netlify.com', {cache: 'no-cache'})
-    .then(response => response.text())
-    .then(text => {
-        const el = document.createElement('style');
-        el.innerHTML = text;
-        document.head.appendChild(el);
+    fetch('https://dark-theme.netlify.com').then(function(response) {
+      if (response.headers.get('Content-Type') === 'application/json') {
+        return response.json();
+      }
+      return response.text();
+    }).then(css => {
+        const prevEl = document.querySelector('#theme-master')
+         if (prevEl) {
+           prevEl.parentNode.removeChild(prevEl);
+         }
+         const el = document.createElement('style');
+         el.id = 'theme-master';
+         el.innerHTML = css;
+         document.head.appendChild(el);
     });
 });
