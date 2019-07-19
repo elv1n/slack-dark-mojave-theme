@@ -5,7 +5,7 @@ A dark theme inspired by Telegram desktop Dark Mojave theme for Slack 3+ and 4+
 
 ## Quick overview
 
-**WIP: Slack 4** it's not fully customized yet!
+**Slack 4**
 
 ```shell  
 npx install-dark-theme
@@ -33,31 +33,29 @@ npx install-dark-theme
 ```  
 Arguments  
 `npx install-dark-theme --rollback`  restore original theme 
+`npx install-dark-theme --force` force theme installing
   
-### Option 2  
-  Find your Slack's application directory.      
-      
-* Windows: `%homepath%\AppData\Local\slack\app-3.3.0\resources\app.asar.unpacked\src\static`  
-* Mac: `/Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static`  
-* Linux: `/usr/lib/slack/resources/app.asar.unpacked/src/static` (Debian-based)      
-      
-Open `ssb-interop.js` and add at the very bottom     
-     
-```js      
-document.addEventListener('DOMContentLoaded', function () {
-    $.ajax({
-        url: 'https://dark-theme.netlify.com',
-        success: function (css) {
-            $("<style></style>").appendTo('head').html(css);
-        }
-    });
-});  
-```      
-      
-That's it! Restart Slack and see how well it works. 
+### Option 2: Manual installation
+* Look at `scripts/injectTheme` to inject theme manually*
 
 
-## Development
+## Development Slack 4
+
+Clone the repo and run commands using yarn/npm
+
+```bash
+yarn
+
+// install theme with watcher
+yarn start
+
+// restore theme on default url after development
+
+yarn restore
+
+```
+
+## Development Slack 3
 
 Clone the repo and run commands using yarn/npm
 
