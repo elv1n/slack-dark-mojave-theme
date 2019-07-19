@@ -2,7 +2,7 @@
 	--primary: #09F;
 	--text: #DDD;
 	--background: rgb(41, 42, 49);
-	--background-elevated: rgb(41, 42, 49);
+	--background-elevated: rgb(51, 51,58);
 	--color-highlight: rgb(43, 107, 149);
 
 	/* These should be less important: */
@@ -34,7 +34,7 @@ html, body {
 
 hr {
 	border: 0;
-	border-bottom: 1px solid var(--background-elevated);
+	border-bottom: 1px solid var(--background);
 }
 
 .popover_mask {
@@ -53,21 +53,21 @@ hr {
 /*.TeamSidebar, .TeamSidebar .StoplightContainer, .TeamSidebar .TeamSidebar-addArea {*/
 /*nav.p-channel_sidebar {*/
 div.client_channels_list_container {
-	background-color: var(--background-elevated) !important;
-	box-shadow: var(--background-elevated) 1px 1px 25px;
+	background-color: var(--background) !important;
+	box-shadow: var(--background) 1px 1px 25px;
 	color: var(--text);
 	z-index: 1;
 }
 
 nav.p-channel_sidebar {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 	color: var(--text);
 }
 
 #team_menu,
 body:not(.loading) #team_menu:hover,
 body:not(.loading) #team_menu:active {
-	background-color: var(--background-elevated) !important;
+	background-color: var(--background) !important;
 	border-bottom-color: var(--border-dim);
 }
 
@@ -114,7 +114,7 @@ ts-jumper input[type="text"],
 
 .p-message_pane__limited_history_foreword {
 	color: var(--text);
-	background: var(--background-elevated);
+	background: var(--background);
 }
 .p-channel_insights__date_heading span {
 	color: var(--text);
@@ -152,9 +152,12 @@ ts-jumper input[type="text"],
 .c-message_kit__file__meta {
 	color: var(--text-grey);
 }
+.c-message_kit__pillow {
+	background: var(--background-elevated);
+}
 
 .c-message_list__day_divider__label__pill, .p-threads_view__divider_label {
-	background: var(--background-elevated);
+	background: var(--background);
 	color: var(--text-bright);
 }
 
@@ -180,7 +183,7 @@ ts-jumper input[type="text"],
 }
 
 .c-member_slug--link {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 .channel_header, #col_messages, #footer {
@@ -365,7 +368,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 }
 
 textarea, input[type="text"], #file_comment_textarea {
-	background-color: var(--background-elevated) !important;
+	background-color: var(--background) !important;
 	border-color: var(--border-dim) !important;
 	color: var(--text) !important;
 }
@@ -417,7 +420,7 @@ ts-message .action_hover_container .btn_msg_action,
 .menu,
 .menu #menu_items_scroller,
 .btn, .btn_outline {
-	background: var(--background-elevated) !important;
+	background: var(--background) !important;
 }
 .c-pillow_file__snippet__content .CodeMirror-code>div:before {
 	color: var(--text-grey);
@@ -484,7 +487,7 @@ ts-message .action_hover_container .btn_msg_action,
 }
 
 .search_result_with_extract {
-	box-shadow: 0 1px 10px var(--background-elevated) !important;
+	box-shadow: 0 1px 10px var(--background) !important;
 }
 
 .ql-placeholder {
@@ -492,7 +495,7 @@ ts-message .action_hover_container .btn_msg_action,
 }
 
 .ql-container.texty_single_line_input {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 	color: var(--text);
 }
 
@@ -501,14 +504,14 @@ ts-message .action_hover_container .btn_msg_action,
 }
 
 #quick_switcher_btn:active, #quick_switcher_btn:focus, #quick_switcher_btn:hover {
-	background-color: var(--background-elevated);
-	border-color: var(--background-elevated);
+	background-color: var(--background);
+	border-color: var(--background);
 }
 
 .feature_name_tagging_client ts-message .mention, ts-message .mention,
 span.match {
 	border: 1px solid var(--border-bright) !important;
-	background-color: var(--background-elevated) !important;
+	background-color: var(--background) !important;
 	font-weight: bold;
 	padding: 2px 4px;
 	margin: 2px;
@@ -536,12 +539,12 @@ span.match {
 }
 
 pre.special_formatting {
-	background: var(--background-elevated) !important;
+	background: var(--background) !important;
 }
 
 code {
 	color: var(--text-special) !important;
-	background-color: var(--background-elevated) !important;
+	background-color: var(--background) !important;
 	border-color: var(--border-dim) !important;
 }
 
@@ -604,7 +607,7 @@ ts-message a.timestamp {
 }
 
 #details_tab .channel_page_section {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 	border-top: 1px solid var(--text-grey);
 }
 
@@ -632,7 +635,7 @@ ts-message a.timestamp {
 }
 
 .pinned_item .pinned_message_text .pin_truncate_fade {
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, var(--background-elevated)), color-stop(1, rgba(255, 255, 255, 0)));
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, var(--background)), color-stop(1, rgba(255, 255, 255, 0)));
 }
 
 .tab_container .file_list_item .contents .member, .tab_container .file_list_item .contents .service_link, .tab_container .file_list_item .contents .share_info, .tab_container .file_list_item .contents .time {
@@ -665,7 +668,7 @@ ts-message a.timestamp {
 /* user profile popup */
 #member_preview_scroller, #member_preview_web_container,
 .menu_member_header, .menu_member_footer {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 	border-color: var(--border-dim);
 	color: var(--text);
 }
@@ -676,7 +679,7 @@ ts-message a.timestamp {
 .internal_user_group_link.ts_tip,
 ts-mention.ts_tip {
 	color: var(--text-bright);
-	background: var(--background-elevated);
+	background: var(--background);
 	border: 1px solid var(--border-dim);
 	padding: 2px 4px;
 	margin: 2px;
@@ -734,7 +737,7 @@ ts-mention.ts_tip:hover {
 }
 
 .p-emoji_picker__group_tab:hover {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 	border-color: var(--border-dim);
 }
 
@@ -748,12 +751,12 @@ ts-mention.ts_tip:hover {
 }
 
 .p-emoji_picker__preview_text {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 	color: var(--text);
 }
 
 #emoji_menu h3, #emoji_menu #emoji_preview_text {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 	color: var(--text);
 }
 
@@ -776,17 +779,17 @@ ts-mention.ts_tip:hover {
 
 /* menus */
 .menu ul li a, .menu ul li:not(.disabled) a {
-	border: 1px solid var(--background-elevated) !important;
+	border: 1px solid var(--background) !important;
 }
 
 .menu ul li.highlighted a, .menu ul li:hover:not(.disabled) a {
-	background: var(--background-elevated) !important;
+	background: var(--background) !important;
 	border-color: var(--border-bright) !important;
 }
 
 .menu .section_header .header_label {
 	color: var(--text) !important;
-	background-color: var(--background-elevated) !important;
+	background-color: var(--background) !important;
 }
 
 .menu .section_header hr {
@@ -875,7 +878,7 @@ ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-messa
 
 #details_toggle.active, #recent_mentions_toggle.active,
 #sli_recap_toggle.active, #stars_toggle.active {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 	border: 1px solid var(--border-bright);
 	color: var(--border-bright);
 }
@@ -887,7 +890,7 @@ ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-messa
 
 .messages_banner, .p-archives_banner {
 	color: var(--text);
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 	border: 1px solid var(--border-bright);
 	border-bottom: 0px;
 	border-radius: 10px 10px 0 0;
@@ -922,12 +925,12 @@ ts-thread .thread_messages,
 
 ts-thread .collapse_inline_thread_container:hover,
 ts-thread .view_all_replies_container:hover {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 }
 
 /* preferences page and modals in general*/
 #fs_modal, .modal, .modal-header, .modal-footer {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 }
 
 #fs_modal .fs_modal_btn:hover {
@@ -979,7 +982,7 @@ ts-thread .view_all_replies_container:hover {
 
 #threads_msgs_scroller_div .threads_caught_up_divider .divider_line,
 #threads_msgs_scroller_div .threads_caught_up_divider .divider_label {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 	border: 1px solid var(--border-dim);
 	color: var(--text);
 }
@@ -1166,7 +1169,7 @@ select {
 
 .lazy_filter_select .lfs_list_container,
 .lazy_filter_select .lfs_list .lfs_item.active {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 }
 
 .lfs_list::-webkit-scrollbar-track {
@@ -1181,7 +1184,7 @@ select {
 
 /* profile */
 #fs_modal #fs_modal_footer {
-	background-color: var(--background-elevated)
+	background-color: var(--background)
 }
 
 #contents_container::-webkit-scrollbar-track {
@@ -1230,7 +1233,7 @@ ts-jumper ts-jumper-container {
 /* app badge */
 .c-app_badge, .c-app_label {
 	color: var(--text-bright);
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 }
 
 /* tabs */
@@ -1241,7 +1244,7 @@ ts-jumper ts-jumper-container {
 /* modal content */
 .c-fullscreen_modal__header,
 .c-fullscreen_modal__content {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 }
 
 .ts_toggle .ts_toggle_secondary_label {
@@ -1250,7 +1253,7 @@ ts-jumper ts-jumper-container {
 
 /* modal transition */
 #fs_modal_bg, .fs_modal_bg {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 /* new search modal */
@@ -1278,7 +1281,7 @@ ts-jumper ts-jumper-container {
 }
 
 .p-search_filter__dates {
-	background-color: var(--background-elevated) !important;
+	background-color: var(--background) !important;
 }
 
 .c-search_autocomplete__suggestion_content .c-channel_name .c-deprecated-icon, .c-search_autocomplete__suggestion_content .c-search_autocomplete__suggestion_icon, .c-search_autocomplete__suggestion_content .c-search_autocomplete__suggestion_text .filetype_description,
@@ -1300,7 +1303,7 @@ ts-jumper ts-jumper-container {
 }
 
 .token {
-	background-color: var(--background-elevated) !important;
+	background-color: var(--background) !important;
 }
 
 .c-search_modal .popover > div {
@@ -1373,7 +1376,7 @@ ts-jumper ts-jumper-container {
 }
 
 #channel_browser #channel_list_container:not(.keyboard_active).not_scrolling .channel_browser_row:hover, #channel_browser .channel_browser_row.highlighted {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 .sk_black {
@@ -1408,12 +1411,12 @@ ts-jumper ts-jumper-container {
 }
 
 .sidebar_menu_list_item:not(.is_active):hover {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 }
 
 /* message action menu */
 .c-menu {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 	color: var(--text-bright);
 	border: 1px solid var(--border-dim);
 }
@@ -1423,7 +1426,7 @@ ts-jumper ts-jumper-container {
 }
 
 .c-message_actions__container {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 .c-message_actions__button:active {
@@ -1491,7 +1494,7 @@ ts-jumper ts-jumper-container {
 }
 
 .c-file_container, .c-file__slide--meta {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 }
 
 .c-file_container {
@@ -1503,12 +1506,21 @@ ts-jumper ts-jumper-container {
 	background-color: var(--background);
 }
 
-.p-flexpane_header {
+.p-flexpane_header,
+.p-flexpane__body {
 	background: var(--background);
 }
 
 .p-flexpane_header__control:hover {
 	color: var(--text);
+}
+
+.p-channel_details__heading,
+.p-channel_details__created_link, .p-channel_details__created_link:hover {
+	color: var(--text);
+}
+.p-channel_details__member_count {
+	color: var(--text-grey);
 }
 
 .p-downloads_list__shift_hint {
@@ -1548,16 +1560,16 @@ ts-rocket, ts-rocket.post_body {
 }
 
 nav {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 }
 
 /* calendar */
 .pickmeup {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 }
 
 .pmu-disabled {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 .pmu-days * {
@@ -1566,12 +1578,12 @@ nav {
 
 /* history loading */
 .p-degraded_list__loading {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 /* actions */
 .c-button--outline, .c-button--outline:link, .c-button--outline:visited {
-	background: var(--background-elevated);
+	background: var(--background);
 	color: var(--text);
 }
 
@@ -1584,7 +1596,7 @@ nav {
 	color: var(--primary);
 	border: 1px solid var(--primary);
 	box-shadow: inset 0 0 0 1px var(--primary);
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 .c-button--primary {
@@ -1603,7 +1615,7 @@ nav {
 
 /* dialogs */
 .c-dialog__header {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 .c-dialog__title {
@@ -1615,17 +1627,17 @@ nav {
 }
 
 .c-dialog__cancel {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 /* unread message divider badge */
 .c-message_list__unread_divider__label {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 /* message editor */
 .c-message__editor__input {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 .c-message__editor__save {
@@ -1661,7 +1673,7 @@ nav {
 }
 
 .c-input_select {
-	background: var(--background-elevated);
+	background: var(--background);
 	color: var(--text);
 }
 
@@ -1670,12 +1682,12 @@ nav {
 }
 
 .p-file_list__filters {
-	background: var(--background-elevated);
+	background: var(--background);
 	padding-top: 12px;
 }
 
 .c-pillow_file_container--full_width:focus, .c-pillow_file_container--full_width:focus-within, .c-pillow_file_container--full_width:hover {
-	background-color: var(--background-elevated);
+	background-color: var(--background);
 }
 
 /* side lists */
@@ -1741,7 +1753,7 @@ nav {
 
 /* browse apps */
 .c-filter_input, .p-apps_browser__category_header {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 .p-apps_browser__category_header {
@@ -1758,7 +1770,7 @@ nav {
 }
 
 .tab_complete_ui {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 .tab_complete_ui ul.type_members .unify_broadcast {
@@ -1766,7 +1778,7 @@ nav {
 }
 
 .c-mrkdwn__broadcast--mention, .c-mrkdwn__broadcast--mention:hover, .c-mrkdwn__highlight, .c-mrkdwn__mention, .c-mrkdwn__mention:hover, .c-mrkdwn__user_group--mention, .c-mrkdwn__user_group--mention:hover {
-	background: var(--background-elevated);
+	background: var(--background);
 }
 
 /* message thumbs up */
@@ -1853,7 +1865,7 @@ ts-jumper .p-jumper__help {
 }
 
 .p-emoji_picker__heading {
-	background: var(--background-elevated)
+	background: var(--background)
 }
 
 .p-emoji_picker__group_tab--active {
@@ -1925,7 +1937,7 @@ ts-jumper .p-jumper__help {
 
 /* calls in chat */
 .c-message__call_attachment {
-	background: var(--background-elevated);
+	background: var(--background);
 	color: var(--text-bright);
 	border-color: var(--primary);
 }
@@ -2006,11 +2018,24 @@ ts-jumper .p-jumper__help {
 .p-classic_nav__model__title__info,
 .p-classic_nav__right__button,
 .p-classic_nav__right__search__placeholder,
-.p-classic_nav__right__search__icon {
+.p-classic_nav__right__search__icon, .p-classic_nav__right__search:hover .p-classic_nav__right__search__placeholder,
+.p-classic_nav__right__search:hover .p-classic_nav__right__search__icon {
 	color: var(--text-grey);
 }
-.p-classic_nav__right__search{
+.p-classic_nav__right__search, .p-classic_nav__right__search:hover{
 	border-color: var(--text-grey);
+}
+
+/* highlight section */
+.p-highlights_section__group_title_label {
+	background: var(--background);
+}
+
+.p-workspace__secondary_view {
+	border-color: var(--text-grey);
+}
+.p-classic_nav__channel_header, .p-classic_nav__right_header {
+	box-shadow: inset 0 -1px 0 0 var(--text-grey);
 }
 
 @keyframes fade-background-highlight {
