@@ -1,10 +1,11 @@
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    $.ajax({
-        url: 'https://dark-theme.netlify.com',
-        success: function (css) {
-            $("<style></style>").appendTo('head').html(css);
-        }
+    fetch('https://dark-theme.netlify.com', {cache: 'no-cache'})
+    .then(response => response.text())
+    .then(text => {
+        const el = document.createElement('style');
+        el.innerHTML = text;
+        document.head.appendChild(el);
     });
 });

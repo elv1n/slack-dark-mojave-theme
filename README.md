@@ -5,7 +5,7 @@ A dark theme inspired by Telegram desktop Dark Mojave theme for Slack 3+ and 4+
 
 ## Quick overview
 
-**Slack 4**
+**WIP: Slack 4** it's not fully customized yet!
 
 ```shell  
 npx install-dark-theme  

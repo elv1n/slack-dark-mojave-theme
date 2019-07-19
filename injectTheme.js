@@ -79,14 +79,16 @@ function restoreBackUp() {
   }
 }
 
+const getTheme = async () => fs.readFile(path.join(__dirname, 'applyTheme.txt'), 'utf-8');
+
 async function injectTheme() {
   if (! await fs.pathExists(FILES.BUNDLE)) {
     await fs.writeFile(FILES.BACKUP, fs.readFileSync(FILES.BUNDLE, 'utf-8'));
   }
-  console.log(`
-Backup saved and you will be able restore original theme with 'npx install-dark-theme --rollback'
-`);
-  const applyTheme = await fs.readFile(path.join(__dirname, 'applyTheme.txt'), 'utf-8');
+//  console.log(`
+//Backup saved and you will be able restore original theme with 'npx install-dark-theme --rollback'
+//`);
+  const applyTheme = await getTheme();
   await fs.appendFile(FILES.BUNDLE, applyTheme);
   console.log(blue(`Theme successfully applied!`));
 }
@@ -124,21 +126,22 @@ You can add theme manually or run 'npx-install-dark-theme --force
   try {
     await fs.access(FILES.BUNDLE, fs.constants.R_OK | fs.constants.W_OK);
 
-    //// Restore backup with argument --rollback
+    // Restore backup with argument --rollback
     //if (options.rollback) {
     //  return restoreBackUp();
     //}
-
+    //
     //const content = await fs.readFile(FILES.BUNDLE, 'utf-8');
-    // Check if anything runs on DOMContentLoaded
-    // the same event will be used for applying theme
+    //// Check if anything runs on DOMContentLoaded
+    //// the same event will be used for applying theme
     //if(content.includes('DOMContentLoaded')) {
     //  rewriteContent(content);
     //} else {
-    //  injectTheme();
+    //  await injectTheme();
     //}
 
     await injectTheme();
+
     spawn.sync('npx', ['asar', 'pack', FILES.APP_TEMP, FILES.APP]);
   } catch (e) {
     console.log(e);
