@@ -99,6 +99,7 @@ __TODO-highlight-indicator {
 
 #msgs_scroller_div::-webkit-scrollbar-track, .client_container,
 #search_terms, #footer, ts-message, .channel_header, ts-jumper ts-jumper-container,
+.p-classic_nav__team_header,
 ts-jumper input[type="text"],
 .supports_custom_scrollbar:not(.slim_scrollbar) #col_channels:hover #channels_scroller::-webkit-scrollbar-track,
 #channel_header_info, #channel_topic_text, #channel_topic_text code, #edit_topic_inner:before,
@@ -1985,6 +1986,31 @@ ts-jumper .p-jumper__help {
 
 .c-sidebar_menu__list_item {
 	color: var(--text);
+}
+
+/* footer chat */
+
+.p-workspace--classic-nav .p-workspace__primary_view_footer,
+.p-workspace__input .p-message_input_field {
+	background: var(--background);
+}
+
+/* footer chat */
+
+/* header */
+
+.p-workspace__top_nav {
+	background: var(--background);
+}
+.p-classic_nav__model__button,
+.p-classic_nav__model__title__info,
+.p-classic_nav__right__button,
+.p-classic_nav__right__search__placeholder,
+.p-classic_nav__right__search__icon {
+	color: var(--text-grey);
+}
+.p-classic_nav__right__search{
+	border-color: var(--text-grey);
 }
 
 @keyframes fade-background-highlight {
