@@ -1,0 +1,16 @@
+const customTheme = '%CURRENT_DIR%/style.css';
+
+const URL = 'http://localhost:8080/style.css';
+const createStyle = () => {
+   const text = require('fs').readFileSync(customTheme, 'utf-8');
+    const prevEl = document.querySelector('#theme-develop')
+     if (prevEl) {
+       prevEl.parentNode.removeChild(prevEl);
+     }
+     const el = document.createElement('style');
+     el.id = 'theme-develop';
+     el.innerHTML = text;
+     document.head.appendChild(el);
+}
+require('fs').watchFile(customTheme, createStyle);
+document.addEventListener('DOMContentLoaded', createStyle);

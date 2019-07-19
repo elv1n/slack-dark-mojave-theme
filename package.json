@@ -7,8 +7,10 @@
     "install-dark-theme": "./injectTheme.js"
   },
   "scripts": {
-    "start": "http-server ./",
-    "build": "node ./utils/build"
+    "start": "npm run dev:inject && http-server ./",
+    "dev:inject": "node ./scripts/injectDevTheme.js",
+    "build": "node ./utils/build",
+    "restore": "node ./scripts/injectTheme.js --force"
   },
   "repository": "elv1n/slack-dark-mojave-theme",
   "author": "Elvin Dzhavadov",
