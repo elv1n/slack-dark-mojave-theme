@@ -5,8 +5,8 @@ const crypto = require('crypto');
 
 const DIST = './dist';
 const COPY = [
-  'applyTheme.txt',
-  'injectTheme.js',
+  'scripts',
+  'static',
   'README.md',
   'preview.png'
 ];
