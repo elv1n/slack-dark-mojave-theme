@@ -4,7 +4,7 @@
   "description": "Telegram like Dark Mojave theme for slack",
   "main": "injectTheme.js",
   "bin": {
-    "install-dark-theme": "./injectTheme.js"
+    "install-dark-theme": "./scripts/injectTheme.js"
   },
   "scripts": {
     "start": "npm run dev:inject && http-server ./",
