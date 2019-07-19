@@ -8,7 +8,9 @@ A dark theme inspired by Telegram desktop Dark Mojave theme for Slack 3+ and 4+
 **WIP: Slack 4** it's not fully customized yet!
 
 ```shell  
-npx install-dark-theme  
+npx install-dark-theme
+// rollback to the original theme.
+npx install-dark-theme --rollback
 ```
 
 **Slack 3**
@@ -30,10 +32,7 @@ npx install-dark-theme@1.0.1 --rollback
 npx install-dark-theme  
 ```  
 Arguments  
-`npx install-dark-theme --rollback`  restore original theme
-
-`npx install-dark-theme --force` force theme installing 
- 
+`npx install-dark-theme --rollback`  restore original theme 
   
 ### Option 2  
   Find your Slack's application directory.      

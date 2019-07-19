@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
     fetch('https://dark-theme.netlify.com', {cache: 'no-cache'})
     .then(response => response.text())

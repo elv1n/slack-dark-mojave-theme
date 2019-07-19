@@ -35,17 +35,10 @@ Feel free to send an issue https://github.com/elv1n/slack-dark-mojave-theme/issu
   process.exit(0);
 }
 
-function blueLog(info) {
-  console.log(blue(`
-${info}
-`));
-}
-
 const systemType = os.type();
 const dir = typesDir.hasOwnProperty(systemType) ? typesDir[systemType]() : null;
 const RESOURCES = join(dir, 'resources');
 const INTEROP_DIR = path.join(RESOURCES, 'resources/app.asar.unpacked/dist');
-const REGEX_THEME = /document.addEventListener(([\S\s]*))/gmi;
 
 const APP_TEMP = join(RESOURCES, 'temp.app.asar');
 const FILES = {
@@ -55,97 +48,63 @@ const FILES = {
   BACKUP: join(APP_TEMP, 'dist/interop_themed_backup.bundle.js')
 };
 
-const filePath = path.join(dir, INTEROP_DIR, 'ssb-interop.bundle.js');
-const backupPath = path.join(dir, INTEROP_DIR, 'interop_themed_backup.js');
+const INJECT_FILE = 'inject-theme.js';
+const INJECT_REQ = `require('./${INJECT_FILE}');`;
 
 if (!dir) {
   log(red(`Cannot find directory for your system ${systemType}`))
 }
 
-function writeInterop(content) {
-  try {
-    fs.writeFileSync(filePath, content);
-  }catch (e) {
-    log(`Cannot write file ${filePath}`);
-  }
-}
-
-function restoreBackUp() {
-  if (fs.pathExistsSync(backupPath)) {
-    fs.writeFileSync(filePath, fs.readFileSync(backupPath, 'utf-8'));
-    console.log(blue(`Theme restored from backup`));
-  } else {
-    log(`Backup not found`)
-  }
-}
-
 const getTheme = async () => fs.readFile(path.join(__dirname, 'applyTheme.txt'), 'utf-8');
 
 async function injectTheme() {
-  if (! await fs.pathExists(FILES.BUNDLE)) {
-    await fs.writeFile(FILES.BACKUP, fs.readFileSync(FILES.BUNDLE, 'utf-8'));
-  }
-//  console.log(`
-//Backup saved and you will be able restore original theme with 'npx install-dark-theme --rollback'
-//`);
-  const applyTheme = await getTheme();
-  await fs.appendFile(FILES.BUNDLE, applyTheme);
+  const injectPath = join(INTEROP_DIR, INJECT_FILE);
+
+  await fs.ensureFile(injectPath);
+  await fs.writeFile(injectPath, await getTheme());
+  await fs.appendFile(FILES.BUNDLE, `
+require('./${INJECT_FILE}');  
+  `);
   console.log(blue(`Theme successfully applied!`));
+  console.log(`You are able restore original theme by 'npx install-dark-theme --rollback'`);
 }
 
-function rewriteContent(content) {
-  try {
-    fs.accessSync(backupPath, fs.constants.R_OK | fs.constants.W_OK);
-    writeInterop(
-      fs.readFileSync(backupPath, 'utf-8')
-    );
-    return injectTheme();
-  } catch (e) {
-    const match = content.match(REGEX_THEME);
-    if (match.length) {
-      const clearContent = content.replace(match[0], '');
-      writeInterop(clearContent);
-      return injectTheme();
-    }
-    if (options.force) {
-      return injectTheme();
-    }
-
-    return log(`Previous theme content not found, but file contains DOMContentLoaded event.
-You can add theme manually or run 'npx-install-dark-theme --force
-    `)
-  }
-}
 
 (async() => {
-  spawn.sync('npx', ['asar', 'extract', FILES.APP, FILES.APP_TEMP]);
-  if (!await fs.pathExists(FILES.BUNDLE)) {
-    log(`Cannot find a file ${FILES.BUNDLE}.`)
-  }
-
   try {
+    spawn.sync('npx', ['asar', 'extract', FILES.APP, FILES.APP_TEMP]);
+    if (!await fs.pathExists(FILES.BUNDLE)) {
+      log(`Cannot find a file ${FILES.BUNDLE}.`)
+    }
     await fs.access(FILES.BUNDLE, fs.constants.R_OK | fs.constants.W_OK);
 
-    // Restore backup with argument --rollback
-    //if (options.rollback) {
-    //  return restoreBackUp();
-    //}
-    //
-    //const content = await fs.readFile(FILES.BUNDLE, 'utf-8');
-    //// Check if anything runs on DOMContentLoaded
-    //// the same event will be used for applying theme
-    //if(content.includes('DOMContentLoaded')) {
-    //  rewriteContent(content);
-    //} else {
-    //  await injectTheme();
-    //}
+    const content = await fs.readFile(FILES.BUNDLE, 'utf-8');
+    const isInstalled = content.includes(INJECT_REQ);
 
-    await injectTheme();
+    // Restore backup with argument --rollback
+    if (options.rollback) {
+      if (!isInstalled) {
+        console.log(`Cannot find the theme to rollback.
+If dark theme still appears then reinstall Slack, please`);
+        return;
+      }
+      await fs.writeFile(FILES.BUNDLE, content.replace(INJECT_REQ, ''));
+      console.log('Dark theme successfully removed!')
+    }
+    // check if theme already installed
+    else if (isInstalled) {
+      console.log('Theme already installed');
+    }
+    // inject theme
+    else {
+      await injectTheme();
+    }
 
     spawn.sync('npx', ['asar', 'pack', FILES.APP_TEMP, FILES.APP]);
+    await fs.remove(FILES.APP_TEMP);
   } catch (e) {
     console.log(e);
-    log(`Cannot get access to ${filePath}. Try with sudo or administrator power shell`)
+    log(`Cannot get access to ${FILES.BUNDLE}. Try with sudo or administrator power shell`)
   }
 })();
 
