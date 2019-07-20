@@ -107,6 +107,10 @@ ts-jumper input[type="text"],
 	background: var(--background) !important;
 }
 
+.p-classic_nav__team_header {
+	box-shadow: inset -1px 0 0 0 var(--text-grey);
+}
+
 .p-message_pane .c-message_list.c-virtual_list--scrollbar > .c-scrollbar__hider:before, .p-message_pane .c-message_list:not(.c-virtual_list--scrollbar):before {
 	border-bottom: 1px solid var(--border-dim);
 	background: var(--background);
@@ -723,11 +727,6 @@ ts-mention.ts_tip:hover {
 	color: var(--text);
 }
 
-.p-emoji_picker__group_tab {
-	border: 1px solid transparent;
-	border-bottom-width: 2px;
-}
-
 .menu .p-emoji_picker__group_tab--active {
 	background-color: var(--background);
 	color: var(--text-special);
@@ -1302,6 +1301,13 @@ ts-jumper ts-jumper-container {
 	border-bottom-color: var(--border-dim)
 }
 
+.c-texty_autocomplete, .c-texty_autocomplete__help {
+	background: var(--background);
+}
+.c-unified_member__context.c-unified_member__not-in-channel-context--small {
+	background: var(--text);
+}
+
 .token {
 	background-color: var(--background) !important;
 }
@@ -1510,6 +1516,9 @@ ts-jumper ts-jumper-container {
 .p-flexpane__body {
 	background: var(--background);
 }
+.p-flexpane_header {
+	border-color: var(--text-grey);
+}
 
 .p-flexpane_header__control:hover {
 	color: var(--text);
@@ -1550,8 +1559,19 @@ ts-jumper ts-jumper-container {
 	color: var(--text);
 }
 
+.c-message_attachment__author_name, .c-message_attachment__author_name.c-link--button, .c-message_attachment__author_name.c-link--button:active, .c-message_attachment__author_name.c-link--button:focus, .c-message_attachment__author_name.c-link--button:hover {
+	color: var(--text);
+}
+
 .c-file_container--has_thumb .c-file__actions:before {
 	background-image: none;
+}
+.p-classic_nav__team_menu__blurb__sub {
+	color: var(--text-grey);
+}
+
+.p-classic_nav__right__button.p-classic_nav__right__whats_new {
+	color: var(--text);
 }
 
 /* file drafts */
@@ -2034,8 +2054,20 @@ ts-jumper .p-jumper__help {
 .p-workspace__secondary_view {
 	border-color: var(--text-grey);
 }
+.p-workspace__sidebar:after {
+	background: var(--text-grey);
+}
+
 .p-classic_nav__channel_header, .p-classic_nav__right_header {
 	box-shadow: inset 0 -1px 0 0 var(--text-grey);
+}
+.p-classic_nav__right_header--frameless {
+	height: 71px;
+}
+
+/* sidebar team */
+.p-team_sidebar, .p-team_sidebar--frameless::before {
+	background: var(--background) !important;
 }
 
 @keyframes fade-background-highlight {
