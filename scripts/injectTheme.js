@@ -51,11 +51,11 @@ If dark theme still appears then reinstall Slack, please`);
     // inject theme
     else {
       await injectTheme(await getTheme());
+      console.log(blue(`Theme successfully applied!`));
+      console.log(`You are able restore original theme by 'npx install-dark-theme --rollback'`);
     }
 
     await pack();
-    console.log(blue(`Theme successfully applied!`));
-    console.log(`You are able restore original theme by 'npx install-dark-theme --rollback'`);
   } catch (e) {
     console.log(e);
     log(`Cannot get access to ${paths.BUNDLE}. Try with sudo or administrator power shell`)

@@ -9,7 +9,7 @@ exports.extract = async () => {
 
 exports.pack = async () => {
   spawn.sync('npx', ['asar', 'pack', paths.APP_TEMP, paths.APP]);
-  //await fs.remove(paths.APP_TEMP);
+  await fs.remove(paths.APP_TEMP);
 };
 
 const cleanTheme = async () => {
