@@ -259,6 +259,13 @@ li.active[class] span,
 	opacity: 1;
 }
 
+/* undreads view */
+.p-unreads_view__header,
+.c-virtual_list__item, .c-virtual_list__sticky_container,
+.c-scrollbar__hider {
+	background: var(--background);
+}
+
 /*"more unreads" bottom*/
 .p-channel_sidebar__banner--top {
 	background-color: var(--background);
@@ -2060,6 +2067,9 @@ ts-jumper .p-jumper__help {
 
 .p-classic_nav__channel_header, .p-classic_nav__right_header {
 	box-shadow: inset 0 -1px 0 0 var(--text-grey);
+}
+.p-classic_nav__channel_header__subtitle {
+	color: var(--text-grey);
 }
 .p-classic_nav__right_header--frameless {
 	height: 71px;

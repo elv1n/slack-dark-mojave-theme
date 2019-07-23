@@ -43,6 +43,13 @@ Arguments
 
 Clone the repo and run commands using yarn/npm
 
+**Open slack with developer tools**
+
+Mac: `export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app`
+
+Windows: `C:\Windows\System32\cmd.exe /c " SET SLACK_DEVELOPER_MENU=TRUE && start C:\Users\CHANG_USER\AppData\Local\slack\slack.exe`
+
+
 ```bash
 yarn
 
@@ -98,12 +105,6 @@ document.addEventListener('DOMContentLoaded', createStyle);
 ```
 
 **3. Run command "yarn start" in repo**
-
-**Open slack**
-
-Mac: `export SLACK_DEVELOPER_MENU=true; open -a /Applications/Slack.app`
-
-Windows: `C:\Windows\System32\cmd.exe /c " SET SLACK_DEVELOPER_MENU=TRUE && start C:\Users\CHANG_USER\AppData\Local\slack\slack.exe`
 
 *Change windows user!*
 
