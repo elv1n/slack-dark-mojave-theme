@@ -339,6 +339,10 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 #presence.active:before {
 	color: var(--active-icon) !important;
 }
+.p-channel_sidebar__channel--selected .c-presence--active,
+.p-channel_sidebar__channel--selected.p-channel_sidebar__channel--im-slackbot:before {
+	color: #ffffff !important;
+}
 
 #msg_input, #primary_file_button {
 	background: transparent !important;
@@ -1535,7 +1539,8 @@ ts-jumper ts-jumper-container {
 .p-channel_details__created_link, .p-channel_details__created_link:hover {
 	color: var(--text);
 }
-.p-channel_details__member_count {
+.p-channel_details__member_count,
+.p-channel_details__dm_section__tz_label {
 	color: var(--text-grey);
 }
 
@@ -2078,6 +2083,11 @@ ts-jumper .p-jumper__help {
 /* sidebar team */
 .p-team_sidebar, .p-team_sidebar--frameless::before {
 	background: var(--background) !important;
+}
+
+/* user name */
+.p-classic_nav__model__title__name--dim {
+	color: var(--text-grey);
 }
 
 @keyframes fade-background-highlight {
