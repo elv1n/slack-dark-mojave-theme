@@ -2125,6 +2125,17 @@ ts-jumper .p-jumper__help {
 	color: var(--text-grey);
 }
 
+/* shortcuts panel */
+.p-shortcuts_flexpane__shortcut_heading,
+.p-shortcuts_flexpane__shortcut_title {
+	color: var(--text);
+}
+
+.p-shortcuts_flexpane__shortcut_heading,
+.p-shortcuts_flexpane__shortcut {
+	border-color: var(--border-dim);
+}
+
 @keyframes fade-background-highlight {
 	0% {
 		background: var(--background-hover)
