@@ -1539,9 +1539,17 @@ ts-jumper ts-jumper-container {
 .p-channel_details__created_link, .p-channel_details__created_link:hover {
 	color: var(--text);
 }
+.p-channel_details__dm_section,
+.p-channel_details__dm_section__tz_section,
+.p-channel_details_section {
+	border-color: var(--border-dim);
+}
 .p-channel_details__member_count,
 .p-channel_details__dm_section__tz_label {
 	color: var(--text-grey);
+}
+.p-pinned_items__empty_list .p-pinned_items__empty_list_action {
+	color: var(--text);
 }
 
 .p-downloads_list__shift_hint {
