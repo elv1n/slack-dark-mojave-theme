@@ -1617,6 +1617,7 @@ nav {
 .c-button--outline, .c-button--outline:link, .c-button--outline:visited {
 	background: var(--background);
 	color: var(--text);
+	border-color: var(--text);
 }
 
 .c-button--outline:active {
@@ -2087,6 +2088,40 @@ ts-jumper .p-jumper__help {
 
 /* user name */
 .p-classic_nav__model__title__name--dim {
+	color: var(--text-grey);
+}
+
+/* profile card */
+
+.p-member_profile_card {
+	background: var(--background);
+}
+.p-member_profile_name__link, .p-member_profile_name__link:hover {
+	color: var(--text);
+}
+.p-member_profile_field__label {
+	color: var(--text-grey);
+}
+
+/* multi select */
+.c-multi_select_input {
+	background: var(--background);
+}
+.c-token {
+	background: var(--color-highlight);
+}
+.c-multi_select_token__remove {
+	color: var(--text);
+}
+.c-multi_select_token__remove:hover {
+	color: var(--text-bright);
+}
+
+/* direct messages */
+.p-dm_browser_modal__controls_meta,
+.p-dm_browser_modal__list_heading,
+.p-dm_browser_modal__list_row_meta,
+.c-base_entity__metadata, .c-base_entity__subtext {
 	color: var(--text-grey);
 }
 
