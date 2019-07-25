@@ -26,7 +26,10 @@ npx install-dark-theme@1.0.1 --rollback
     
 # Installing into Slack      
  **NB:** You'll have to do this every time Slack updates.      
-  
+ 
+### Getting updates for the theme
+To load the latest updates for the theme you need just press `⌘+R` (Mac), `ctrl+R` (Windows) or reload Slack.
+
 ### Option 1  
 ```shell  
 npx install-dark-theme  
