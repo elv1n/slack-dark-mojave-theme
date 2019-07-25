@@ -2041,14 +2041,11 @@ ts-jumper .p-jumper__help {
 	color: var(--text);
 }
 
-/* footer chat */
-
+.p-workspace--classic-nav .p-workspace__primary_view,
 .p-workspace--classic-nav .p-workspace__primary_view_footer,
 .p-workspace__input .p-message_input_field {
 	background: var(--background);
 }
-
-/* footer chat */
 
 /* header */
 
