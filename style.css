@@ -2141,6 +2141,16 @@ ts-jumper .p-jumper__help {
 .p-shortcuts_flexpane__shortcut {
 	border-color: var(--border-dim);
 }
+.c-unified_member__context.c-unified_member__not-in-channel-context--small,
+.c-unified_member__label--small,
+.c-usergroup__context.c-usergroup__not-in-channel-context--small {
+	color: var(--text-grey);
+}
+.c-texty_autocomplete__result--selected .c-unified_member__context.c-unified_member__not-in-channel-context--small,
+.c-texty_autocomplete__result--selected .c-unified_member__label--small,
+.c-texty_autocomplete__result--selected .c-usergroup__context.c-usergroup__not-in-channel-context--small {
+	color: var(--text-bright);
+}
 
 @keyframes fade-background-highlight {
 	0% {
