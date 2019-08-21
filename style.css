@@ -2025,6 +2025,7 @@ ts-jumper .p-jumper__help {
 
 .c-icon_button--light.c-button-unstyled:hover, .c-icon_button--light:hover, .c-icon_button--light:link:hover {
 	color: var(--text-bright);
+	background: var(--background-hover)
 }
 
 /* Icon button light end */
@@ -2043,11 +2044,34 @@ ts-jumper .p-jumper__help {
 
 .p-workspace--classic-nav .p-workspace__primary_view,
 .p-workspace--classic-nav .p-workspace__primary_view_footer,
-.p-workspace__input .p-message_input_field {
+.p-workspace__input .p-message_input_field
+{
 	background: var(--background);
 }
 
-/* header */
+.p-workspace__input .p-message_input_field,
+.p-threads_footer__input .p-message_input_field {
+	border-color: var(--border-bright);
+}
+.p-workspace__input .p-message_input_field.focus,
+.p-threads_footer__input .p-message_input_field.focus{
+	border-color: var(--border-dim);
+}
+.p-workspace__input .p-message_input_file_button,
+.p-threads_footer__input .p-message_input_file_button,
+.p-workspace__input .p-message_input_field.focus~.p-message_input_file_button:not(:hover),
+.p-threads_footer__input .p-message_input_field.focus~.p-message_input_file_button:not(:hover) {
+	color: var(--border-dim);
+}
+
+.p-threads_footer__input .p-message_input_file_button.p-message_input_file_button--active,
+.p-workspace__input .p-message_input_file_button.p-message_input_file_button--active,
+.p-workspace__input .p-message_input_file_button:hover,
+.p-threads_footer__input .p-message_input_file_button:hover {
+	background: var(--primary);
+}
+
+	/* header */
 
 .p-workspace__top_nav {
 	background: var(--background);
@@ -2124,6 +2148,9 @@ ts-jumper .p-jumper__help {
 }
 
 /* direct messages */
+.c-alert--boxed, .c-alert--custom {
+	color: var(--text)
+}
 .p-dm_browser_modal__controls_meta,
 .p-dm_browser_modal__list_heading,
 .p-dm_browser_modal__list_row_meta,
@@ -2131,6 +2158,13 @@ ts-jumper .p-jumper__help {
 	color: var(--text-grey);
 }
 
+.p-dm_browser_modal__list_row--active {
+	background: var(--background-hover);
+}
+.c-fullscreen_modal__back:hover, .c-fullscreen_modal__close:hover {
+	background: var(--background-hover);
+	color: var(--text-bright);
+}
 /* shortcuts panel */
 .p-shortcuts_flexpane__shortcut_heading,
 .p-shortcuts_flexpane__shortcut_title {
