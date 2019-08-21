@@ -1,10 +1,11 @@
 const fs = require('fs-extra');
 const { join } = require('path');
-const { pack, extract, injectTheme } = require('./_helpers');
+const { pack, prepareToInject, injectTheme } = require('./_helpers');
 
 
 (async() => {
-  await extract();
+  await prepareToInject();
+
   const root = join(__dirname, '..');
 
   const devTheme = join(root, 'static/devTheme.txt');

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "npm run dev:inject && http-server ./",
+    "inject": "node ./scripts/injectTheme.js",
     "dev:inject": "node ./scripts/injectDevTheme.js",
     "build": "node ./utils/build",
     "restore": "node ./scripts/injectTheme.js --force"
@@ -16,6 +17,7 @@
   "author": "Elvin Dzhavadov",
   "license": "MIT",
   "dependencies": {
+    "asar": "^2.0.1",
     "colorette": "^1.0.7",
     "compare-versions": "^3.4.0",
     "cross-spawn": "^6.0.5",
