@@ -1,4 +1,9 @@
-# Slack Dark Mojave Theme      
+### [Dark mode is now available in Slack 4](https://slackhq.com/dark-mode-for-slack-desktop)
+
+
+
+
+## Slack Dark Mojave Theme      
 [![npm monthly downloads](https://img.shields.io/npm/dm/install-dark-theme.svg)](https://www.npmjs.com/package/install-dark-theme) [![Netlify Status](https://api.netlify.com/api/v1/badges/c39c1370-0a3e-45c0-89c7-d5dc594c4285/deploy-status)](https://app.netlify.com/sites/dark-theme/deploys)
 
 A dark theme inspired by Telegram desktop Dark Mojave theme for Slack 3+ and 4+      
